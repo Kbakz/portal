@@ -1,0 +1,441 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: calibri;
+}
+
+.center{
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 2%;
+}
+
+.clear{
+	clear: both;
+}
+
+body{
+	background-color: #e6e6e6;
+}
+
+header{
+	width: 100%;
+	height: 140px;
+	background: #012b62;
+	z-index: 2;
+	position: fixed;
+}
+
+header.scroll{
+	transition: 1s;
+ 	height: 70px;
+ 	float: right;
+}
+
+header h2{
+	color: white;
+	font-size: 40px;
+	left: 2%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+header.scroll h2{
+	color: white;
+	display: block;
+	font-size: 30px;
+	left: 2%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+header form{
+	text-align: right;
+	padding: 15px 10px;
+}
+
+header.scroll form{
+	text-align: left;
+	margin-left: 180px;
+}
+
+header input[type=text]{
+	max-width: 450px;
+	width: 50%;
+	height: 35px;
+	background-color: #204b8b;
+	border-radius: 20px;
+	border: 0;
+	padding-left: 15px;
+	font-size: 17px;
+}
+
+header.scroll input[type=text]{
+	max-width: 150px;
+	height: 35px;
+	background-color: #204b8b;
+	border-radius: 20px;
+	border: 0;
+	padding-left: 15px;
+	font-size: 17px;
+}
+
+header input[type=text]::placeholder{
+	color: #c9c9c9
+}
+
+header input[type=text]:focus{
+	border: 1px solid cyan;
+}
+
+button{
+	height: 35px;
+	position: relative;
+	left: -40px;
+	padding: 0 5px;
+	border: 0;
+	width: 25px;
+	cursor: pointer;
+	background-color: transparent;
+	color: white;
+	font-size: 15px
+}
+
+header input:focus{
+	outline: none;
+}
+
+header.scroll nav{
+	float: none;
+	margin-top: -50px
+}
+
+header nav.mobile{ 
+	display: none;
+	float: right;
+}
+
+header nav.mobile span{
+	color: white;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+header.scroll nav.mobile ul{
+	top: 70px;
+}
+
+header nav.mobile ul{
+	position: absolute;
+	top: 140px;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	background-color: rgba(32, 75, 139, 0.801);
+	backdrop-filter: blur(5px);
+	display: none;
+}
+
+header nav.mobile li{
+	padding: 5px 0;
+}
+
+header nav.mobile a{
+	text-decoration: none;
+	display: block;
+	padding: 10px 0;
+	color: white;
+	text-align: center;
+}
+
+header nav.desktop{
+	float: right;
+}
+
+header ul{
+	list-style-type: none;
+}
+
+header nav.desktop li{
+	display: inline-block;
+	border-radius: 50px;
+}
+
+header nav.desktop .selected{
+	background: #ff6e46;
+}
+
+header nav.desktop li.selected a{
+	color: #012b62;
+}
+
+header nav.desktop li.selected a:hover{
+	color: #012b62;
+}
+
+header nav.desktop a{
+	text-decoration: none;
+	color: white;
+	padding: 10px 20px;
+	display: block;
+}
+
+header nav.desktop a:hover{
+	color: #adadad
+}
+
+header.scroll .social{
+	display: none;
+}
+
+
+header .social{
+	display: block;
+	padding: 0 10px;
+	text-align: right;
+}
+
+header .social a{
+	color: #204b8b;
+	padding: 0 10px
+}
+
+header .social a:hover{
+	color: #ff6e46;
+}
+
+aside{
+	position: fixed;
+	left: -300px;
+	top: 140px;
+	width: 300px;
+	height: calc(100vh - 140px);
+	border-right: 3px solid #012b62;
+	background-color: rgba(32, 75, 139, 0.801);
+	backdrop-filter: blur(5px);
+	padding: 20px 30px;
+	text-align: center;
+	z-index: 1;
+}
+
+aside.scroll{
+	transition: 1s;
+	top: 70px;
+	height: calc(100vh - 70px);
+}
+
+aside > p{
+	color: white;
+	text-align: right;
+	font-size: 30px;
+	background-color: #012b62;
+	padding: 5px 10px;
+	display: inline-block;
+	position: relative;
+	top: -17px;
+	left: 172px;
+	cursor: pointer;
+	border-radius: 0 10px 10px 0;
+}
+
+aside .categorias{
+	background-color: #153668;
+	padding-top: 0;
+	text-align: left;
+}
+
+aside .categorias h2{
+	color: white;
+	display: block;
+	padding: 10px 20px;
+	text-align: center;
+	background-color: #012b62;
+}
+
+aside .categorias select{
+	width: 100%;
+	padding: 10px;
+	font-size: 17px;
+	outline: 0;
+	color: #636363;
+}
+
+aside .categorias a:hover{
+	background-color: #012b62;
+}
+
+/**Conteúdo da página **/
+section.conteudo{
+	position: relative;
+	width: 100%;
+	top: 140px;
+}
+
+section.scroll{
+	top: 70px;
+}
+
+.box-content{
+	padding: 20px;
+}
+
+.publi-single{
+	padding: 30px;
+	height: 150px;
+	margin: 5px;
+	background-color: #434343;
+}
+
+.noticia-destaque{
+	display: flex;
+	background-color: white;
+	margin-top: 50px;
+	min-height: 250px;
+	box-shadow: 3px 6px 15px -1px #ACACAC;
+}
+
+.noticia-destaque .capa-destaque{
+	background-color: gray;
+	width: 40%;
+}
+
+.noticia-destaque .conteudo-destaque{
+	width: 60%;
+	padding: 10px;
+}
+
+.conteudo-destaque h1{
+	font-size: 25px;
+	color: #303030;
+}
+
+.conteudo-destaque p{
+	font-size: 17px;
+	margin-top: 10px;
+	color: #656565;
+}
+
+.conteudo-destaque a{
+	padding: 5px 10px;
+	margin-top: 10px;
+	display: inline-block;
+	color: white;
+	background-color: #ff6e46;
+	text-decoration: none;
+}
+
+.noticias{
+	padding: 20px 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+.noticia-single{
+	width: 33.3%;
+	padding: 10px;
+	margin: 30px 0;
+}
+
+.capa-noticia{
+	height: 200px;
+	background-color: gray;
+}
+
+.conteudo-noticia{
+	background-color: white;
+	padding: 15px;
+	height: 100%;
+	max-height: 230px;
+}
+
+.conteudo-noticia h3{
+	font-size: 20px;
+	color: #303030;
+}
+
+.conteudo-noticia p{
+	font-size: 17px;
+	margin-top: 10px;
+	color: #656565;
+}
+
+.conteudo-noticia a{
+	padding: 5px 10px;
+	margin-top: 10px;
+	display: inline-block;
+	color: white;
+	background-color: #ff6e46;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 1024px){
+	header.scroll form{
+		text-align: center;
+	}
+
+	header nav.desktop{
+		display: none;
+	}
+
+	header nav.mobile{
+		display: block;
+	}
+
+	aside{
+		display: none;
+	}
+
+	section.conteudo{
+		position: relative;
+		width: 100%;
+		top: 140px;
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 700px){
+	.noticia-single{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 460px){
+	header h2{
+		font-size: 25px;
+	}
+
+	header.scroll h2{
+		font-size: 20px;
+	}
+
+	header nav.mobile span{
+		font-size: 25px;
+	}
+
+	header.scroll form{
+		text-align: right;
+		margin-left: 100px;
+	}
+
+	header input[type=text]{
+		max-width: 450px;
+		width: 80%;
+		height: 35px;
+	}
+
+	header.scroll input[type=text]{
+		width: 110px;
+	}
+
+	header.scroll input[type=text]::placeholder{
+		font-size: 16px;
+	}
+
+	.noticia-single{
+		width: 100%;
+	}
+}
