@@ -13,6 +13,9 @@
 			</select>
 		</form>
 	</div><!--categoria-->
+	<div class="contato-aside">
+		<p>Entre em contato conosco <a href="<?php echo INCLUDE_PATH?>quem-somos#contato">aqui</a></p>
+	</div>
 </aside>
 
 <div class="box-content">

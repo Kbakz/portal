@@ -12,6 +12,8 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<title>Portal de notícias</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>css/style.css">
 </head>
 <body>
