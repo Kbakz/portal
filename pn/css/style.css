@@ -1,0 +1,109 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,body{
+	height: 100%;
+	background-color: #f0f0f0;
+}
+
+.center{
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 2%;
+}
+
+.box-alert{
+	width: 100%;
+	padding: 8px 0;
+	text-align: center;
+}
+
+.sucesso{	
+	background-color: #a5d6a7;
+	color: white;
+}
+
+.erro{
+	background-color: #f75353;
+	color: white;
+}
+
+
+/*Login*/
+section.box-login form{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	width: 100%;
+	max-width: 400px;
+}
+
+
+section.box-login h1{
+	padding: 20px ;
+	color: #012B62;
+	font-size: 25px;
+	font-weight: normal;
+	text-align: center;
+}
+
+section.box-login label{
+	cursor: pointer;
+	display: block;
+	font-size: 18px;
+	margin: 20px 0px 5px 15px;
+	color: #303030;
+}
+
+section.box-login input:not([type="submit"]){
+	outline: 0;
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	color: #303030;
+	border: 1px solid #ccc;
+	padding-left: 15px;
+	border-radius: 20px;
+}
+
+section.box-login input[type=submit]{
+	width: 100%;
+	height: 35px;
+	background-color: #ff6e46;
+	border: none;
+	border-radius: 30px;
+	color: #012b62;
+	font-size: 16px;
+	margin-top: 10px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+/*Painel*/
+.menu-painel{
+	position: fixed;
+	left: 0px;
+	width: 300px;
+	height: 100%;
+	background-color: #012b62;
+	backdrop-filter: blur(5px);
+	padding: 20px 30px;
+	z-index: 1;
+}
+
+.menu-painel > p{
+	font-size: 30px;
+	color: white;
+	background-color: #204B8B;
+	display: inline-block;
+	padding: 10px 15px;
+	border-radius: 0 50px 50px 0;
+	position: absolute;
+	left: 300px;
+	cursor: pointer;
+}

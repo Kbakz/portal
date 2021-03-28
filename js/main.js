@@ -29,8 +29,6 @@ $(function(){
 			var offSet = aside.offset().left;
 			var icone = $('aside > p > i');
 
-			console.log(offSet);
-
 			if(offSet == -300){
 				aside.animate({'left':'0'});
 				icone.removeClass('fa-angle-double-right');

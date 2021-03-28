@@ -1,6 +1,5 @@
 <aside>
 	<p><i class="fas fa-angle-double-right"></i></p>
-	<!--<h2>Categoria</h2>-->
 	<div class="categorias">
 		<h2><i class="fas fa-filter"></i></h2>
 		<form>

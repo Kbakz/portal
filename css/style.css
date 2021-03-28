@@ -516,6 +516,7 @@ section.scroll{
 	font-size: 16px;
 	margin-top: 10px;
 	font-size: 20px;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 1024px){

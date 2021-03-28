@@ -1,6 +1,5 @@
 <?php
  	include('config.php');
-
  	$url = isset($_GET['url']) ? $_GET['url'] : 'noticias';
 ?>
 <!DOCTYPE html>
