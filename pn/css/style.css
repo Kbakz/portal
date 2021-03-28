@@ -45,6 +45,7 @@ section.box-login form{
 	padding: 20px;
 	width: 100%;
 	max-width: 400px;
+	box-shadow: 3px 6px 15px -1px #ACACAC;
 }
 
 
@@ -107,7 +108,7 @@ section.box-login input[type=submit]{
 
 .menu-painel{
 	position: fixed;
-	left: 0px;
+	left: -300px;
 	width: 300px;
 	height: 100%;
 	background-color: rgba(32, 75, 139, 0.9);
@@ -155,4 +156,99 @@ section.box-login input[type=submit]{
 	color: white;
 	font-weight: normal;
 	font-size: 23px;
+}
+
+.itens-menu{
+	background-color: #617793;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+.itens-menu h3{
+	color: #ff6e46;
+	text-align: center;
+	padding: 10px;
+	font-size: 22px;
+	font-weight: normal;
+}
+
+.itens-menu a{
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-bottom: 1px solid #012B62;
+	font-size: 15px;
+}
+
+.itens-menu a.selected{
+	background: #355f93;
+	border: 1px solid #0f488e;
+}
+
+.sessao-conteudo{
+	padding: 20px;
+}
+
+.conteudo-painel{
+	background-color: white;
+	box-shadow: 3px 6px 15px -1px #ACACAC;
+	padding: 15px;
+}
+
+.conteudo-painel h1{
+	color: #FF6E46;
+	font-weight: normal;
+	padding-bottom: 30px;
+}
+
+.conteudo-painel h2{
+	color: #303030;
+	padding: 10px;
+	font-size: 30px;
+	font-weight: normal;
+	text-align: center;
+}
+
+.metricas{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.metrica-single{
+	padding: 20px 2%;
+	width: 30%;
+	text-align: center;
+	color: white;
+}
+
+.metrica-single h3{
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.metrica-single p{
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.metrica-single:nth-of-type(1){
+	background-color: #204B8B;
+}
+
+.metrica-single:nth-of-type(2){
+	background-color: #FF6E46;
+}
+
+.metrica-single:nth-of-type(3){
+	background-color: #ff4646;
+}
+
+@media screen and (max-width: 720px){
+	.metrica-single{
+		width: 100%;
+		margin-top: 20px;
+	}
 }

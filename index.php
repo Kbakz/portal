@@ -1,5 +1,7 @@
 <?php
  	include('config.php');
+ 	Site::atualizarUsuario();
+
  	$url = isset($_GET['url']) ? $_GET['url'] : 'noticias';
 ?>
 <!DOCTYPE html>

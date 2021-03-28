@@ -24,6 +24,16 @@
 			<?php }?>
 		</div><!--img-usuario-->
 		<h2><?php echo $_SESSION['nome']; ?></h2>
+
+		<div class="itens-menu">
+			<h3>Métricas</h3>
+			<a <?php @Site::selectedMenu('')?> href="<?php echo INCLUDE_PATH_PAINEL?>">Ver Métricas</a>
+		</div><!--itens-menu-->
+		<div class="itens-menu">
+			<h3>Gerenciar usuarios</h3>
+			<a <?php Site::selectedMenu('adicionar-usuario')?> href="<?php echo INCLUDE_PATH_PAINEL?>adicionar-usuario">Adicionar novo usuario</a>
+			<a href="">Usuarios cadastrados</a>
+		</div><!--itens-menu-->
 	</div><!--menu-painel-->
 	<div class="header-painel">
 		<div class="center">
@@ -33,6 +43,9 @@
 			<div class="clear"></div>
 		</div>
 	</div><!--header-painel-->
+	<div class="sessao-conteudo">
+		<?php Painel::carregarPagina();?>
+	</div><!--conteudo-painel-->
 <script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
 <script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL?>js/main.js"></script>
