@@ -14,7 +14,25 @@
 <body>
 	<div class="menu-painel">
 		<p><i class="fas fa-angle-double-left"></i></p>
+		<div class="img-usuario">
+			<?php
+				if ($_SESSION['img'] == '') {			
+			?>	
+				<i class="fas fa-user"></i>
+			<?php }else{?>
+				<img src="<?php echo INCLUDE_PATH_PAINEL?>/uploads/<?php echo $_SESSION['img']?>">
+			<?php }?>
+		</div><!--img-usuario-->
+		<h2><?php echo $_SESSION['nome']; ?></h2>
 	</div><!--menu-painel-->
+	<div class="header-painel">
+		<div class="center">
+			<div class="logout">
+				<a href="?logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div><!--header-painel-->
 <script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
 <script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL?>js/main.js"></script>
