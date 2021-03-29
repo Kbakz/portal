@@ -1,6 +1,7 @@
 <?php
  	include('config.php');
  	Site::atualizarUsuario();
+ 	Site::contarVisitas();
 
  	$url = isset($_GET['url']) ? $_GET['url'] : 'noticias';
 ?>

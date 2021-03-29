@@ -1,3 +1,5 @@
+/*Deixar o menu-painel com left 0*/
+
 *{
 	margin: 0;
 	padding: 0;
@@ -194,6 +196,7 @@ section.box-login input[type=submit]{
 	background-color: white;
 	box-shadow: 3px 6px 15px -1px #ACACAC;
 	padding: 15px;
+	margin-top: 20px;
 }
 
 .conteudo-painel h1{
@@ -244,6 +247,81 @@ section.box-login input[type=submit]{
 
 .metrica-single:nth-of-type(3){
 	background-color: #ff4646;
+}
+
+.usuarios-online table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.usuarios-online table tr:nth-of-type(1){
+	background-color: #204B8B;
+	color: white;
+}
+
+.usuarios-online table tr{
+	border-bottom: 1px solid #ccc;
+	color: #646464;
+}
+
+.usuarios-online table td{
+	width: 50%;
+	padding: 10px 10px;
+	
+}
+
+.conteudo-painel form{
+	padding-top: 30px;
+	width: 100%;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.conteudo-painel label{
+	display: block;
+	font-size: 18px;
+	margin: 20px 0px 5px 15px;
+	color: #646464;
+}
+
+.conteudo-painel input:not([type="submit"]){
+	outline: 0;
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	color: #303030;
+	border: 1px solid #ccc;
+	padding-left: 15px;
+	border-radius: 20px;
+}
+
+.conteudo-painel select{
+	outline: 0;
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	color: #303030;
+	border: 1px solid #ccc;
+	padding-left: 15px;
+	border-radius: 20px;;
+}
+
+.conteudo-painel input[type=file]{
+	font-size:16px;
+	border: 0;
+}
+
+.conteudo-painel input[type=submit]{
+	width: 100%;
+	height: 35px;
+	background-color: #ff6e46;
+	border: none;
+	border-radius: 30px;
+	color: #012b62;
+	font-size: 16px;
+	margin-top: 10px;
+	font-size: 20px;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 720px){

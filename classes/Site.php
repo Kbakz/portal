@@ -46,5 +46,21 @@
 				$sql->execute(array($ip,$horarioAtual,$token));
 			}
 		}
+
+		public static function contarVisitas(){
+			if(!isset($_COOKIE['visita'])){
+				setcookie('visita','true',time() + (60*60*24*7));
+				if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+				    $ip = $_SERVER['HTTP_CLIENT_IP'];
+				} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+				    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+				} else {
+				    $ip = $_SERVER['REMOTE_ADDR'];
+				}
+				$data = date('Y-m-d');
+				$sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.visitas` VALUES(null,?,?)");
+				$sql->execute(array($ip,$data));
+			}
+		}
 	}
 ?>
