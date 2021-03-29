@@ -23,7 +23,8 @@
 				<img src="<?php echo INCLUDE_PATH_PAINEL?>/uploads/<?php echo $_SESSION['img']?>">
 			<?php }?>
 		</div><!--img-usuario-->
-		<h2><?php echo $_SESSION['nome']; ?></h2>
+		<h2><?php echo ucfirst($_SESSION['nome']); ?></h2>
+		<span><?php echo Painel::pegaCargo($_SESSION['cargo']); ?></span>
 
 		<div class="itens-menu">
 			<h3>Métricas</h3>

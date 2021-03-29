@@ -81,6 +81,15 @@
 			@unlink('uploads/'.$file);
 		}
 
+		public static function deletar($tabela,$id){
+				$sql = MySql::conectar()->prepare("DELETE FROM `$tabela` WHERE id = ?");
+				$sql->execute(array($id));
+		}
 
+		public static function selecionar($tabela,$query,$arr){
+			$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE $query = ?");
+			$sql->execute(array($arr));
+			return $sql->fetch();
+		}
 	}
 ?>

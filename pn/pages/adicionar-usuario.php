@@ -57,6 +57,6 @@
 		<label>Imagem:</label>
 		<input type="file" name="imagem">
 
-		<input type="submit" name="acao">
+		<input type="submit" name="acao" value="Cadastrar">
 	</form>
 </div><!--conteudo-painel-->

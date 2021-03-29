@@ -14,5 +14,13 @@
 				return false;
 			}
 		}
+
+		public static function atualizarUsuario($senha,$img,$nome,$cargo,$id){
+			$sql = MySql::conectar()->prepare("UPDATE `tb_admin.usuarios` SET senha = ?,img = ?,nome = ?,cargo = ? WHERE id = ?");
+			if($sql->execute(array($senha,$img,$nome,$cargo,$id)))
+				return true;
+			else
+				return false;
+		}
 	}
 ?>
