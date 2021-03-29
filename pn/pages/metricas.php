@@ -34,21 +34,23 @@
 <div class="conteudo-painel">
 	<div class="usuarios-online">
 		<h2>Usuarios online</h2>
-		<table>
-				<tr>
-				    <td>Ip</td>
-				    <td>Última ação</td>
-				</tr>
-				<?php 
-					foreach ($usuariosOnline as $key => $value) {
-				?>
-				<tr>
-				    <td><?php echo $value['ip']?></td>
-				    <td><?php echo date('d/m/Y H:i:s',strtotime($value['ultima_acao']));?></td>
-				</tr>
-				<?php 
-					}
-				?>
-		</table>
+		<div class="table-overflow">
+			<table>
+					<tr>
+					    <th>Ip</th>
+					    <th>Última ação</th>
+					</tr>
+					<?php 
+						foreach ($usuariosOnline as $key => $value) {
+					?>
+					<tr>
+					    <td><?php echo $value['ip']?></td>
+					    <td><?php echo date('d/m/Y H:i:s',strtotime($value['ultima_acao']));?></td>
+					</tr>
+					<?php 
+						}
+					?>
+			</table>
+		</div><!--table-overflow-->
 	</div><!--usuarios-online-->
 </div><!--conteudo-painel-->

@@ -32,7 +32,7 @@
 		<div class="itens-menu">
 			<h3>Gerenciar usuarios</h3>
 			<a <?php Site::selectedMenu('adicionar-usuario'); Permissao::verificaPermissaoMenu(0)?> href="<?php echo INCLUDE_PATH_PAINEL?>adicionar-usuario">Adicionar novo usuario</a>
-			<a <?php Site::selectedMenu('cadastrar-usuarios'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>usuarios-cadatrados">Usuarios cadastrados</a>
+			<a <?php Site::selectedMenu('usuarios-cadastrados'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>usuarios-cadastrados">Usuarios cadastrados</a>
 		</div><!--itens-menu-->
 	</div><!--menu-painel-->
 	<div class="header-painel">

@@ -1,7 +1,10 @@
 <?php Permissao::verificaPermissaoPagina(1);?>
 <div class="conteudo-painel">
 	<h2>Adicionar usuario</h2>
-	<?php
+	
+	<form method="post" enctype="multipart/form-data">
+
+		<?php
 			if(isset($_POST['acao'])){
 				$usuario = $_POST['usuario'];
 				$senha = $_POST['senha'];
@@ -36,8 +39,6 @@
 				}
 			}
 		?>
-	
-	<form method="post" enctype="multipart/form-data">
 		
 		<label>Login:</label>
 		<input type="text" name="usuario">

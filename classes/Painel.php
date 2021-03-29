@@ -1,11 +1,15 @@
 <?php
 	class Painel{
 		public static $cargos = [
-			"0" => "administradoe",
-			"1" => "sub administrador",
-			"2" => "jornalista",
-			"3" => "editor"
+			"0" => "Administrador",
+			"1" => "Sub administrador",
+			"2" => "Jornalista",
+			"3" => "Editor"
 		];
+
+		public static function pegaCargo($i){
+			return self::$cargos[$i];
+		}
 
 		public static function logado(){
 			return isset($_SESSION['login']) ? true : false;
