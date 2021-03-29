@@ -31,6 +31,11 @@
 			<a <?php @Site::selectedMenu('')?> href="<?php echo INCLUDE_PATH_PAINEL?>">Ver Métricas</a>
 		</div><!--itens-menu-->
 		<div class="itens-menu">
+			<h3>Gerenciar notícias</h3>
+			<a <?php Site::selectedMenu('postar-noticia'); Permissao::verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL?>postar-noticia">Postar notícia</a>
+			<a <?php Site::selectedMenu('noticias-cadastradas');?> href="<?php echo INCLUDE_PATH_PAINEL?>noticias-cadastradas">Notícias cadastradas</a>
+		</div><!--itens-menu-->
+		<div class="itens-menu">
 			<h3>Gerenciar usuarios</h3>
 			<a <?php Site::selectedMenu('adicionar-usuario'); Permissao::verificaPermissaoMenu(0)?> href="<?php echo INCLUDE_PATH_PAINEL?>adicionar-usuario">Adicionar novo usuario</a>
 			<a <?php Site::selectedMenu('usuarios-cadastrados'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>usuarios-cadastrados">Usuarios cadastrados</a>
