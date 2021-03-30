@@ -1,7 +1,25 @@
+<?php
+	Permissao::verificaPermissaoPagina(2);
+?>
 <div class="conteudo-painel">
 	<h2>Postar notícias</h2>
 
-	<form method="post" enctype="multipart/form-data">	
+	<form method="post" enctype="multipart/form-data">
+		<?php
+			if(isset($_POST['acao'])){
+				$categoria = $_POST['categoria'];
+				$titulo = $_POST['titulo'];
+				$conteudo = $_POST['conteudo'];
+				$imagem = $_FILES['imagem'];
+				$data = $_POST['data'];
+				$autor = $_POST['autor'];
+
+			}
+		?>
+		<label>Selecionar categoria:</label>
+		<select name="categoria">
+			<option></option>
+		</select>
 		<label>Título</label>
 		<input type="text" name="titulo">
 		<label>Conteúdo:</label>
@@ -14,5 +32,5 @@
 
 		<input type="submit" name="acao" value="Cadastrar">
 	</form>
-	
+
 </div><!--conteudo-painel-->

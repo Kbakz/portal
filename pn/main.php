@@ -32,6 +32,8 @@
 		</div><!--itens-menu-->
 		<div class="itens-menu">
 			<h3>Gerenciar notícias</h3>
+			<a <?php Site::selectedMenu('cadastrar-categoria'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-categoria">Cadastrar categoria</a>
+			<a <?php Site::selectedMenu('gerenciar-categorias'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>gerenciar-categorias">Gerenciar categorias</a>
 			<a <?php Site::selectedMenu('postar-noticia'); Permissao::verificaPermissaoMenu(2)?> href="<?php echo INCLUDE_PATH_PAINEL?>postar-noticia">Postar notícia</a>
 			<a <?php Site::selectedMenu('noticias-cadastradas');?> href="<?php echo INCLUDE_PATH_PAINEL?>noticias-cadastradas">Notícias cadastradas</a>
 		</div><!--itens-menu-->

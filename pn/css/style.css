@@ -296,6 +296,8 @@ table a.editar{ background: #FF6E46}
 
 table a.excluir{ background: #FF4646}
 
+table a.order{ background: #204B8B}
+
 .conteudo-painel form{
 	padding-top: 30px;
 	width: 100%;
