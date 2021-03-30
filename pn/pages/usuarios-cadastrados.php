@@ -29,6 +29,9 @@
 				$sql->execute(); $usuarios = $sql->fetchAll();
 		
 				foreach ($usuarios as $key => $value) {
+					if($value['cargo'] == 0){
+						continue;
+					}
 			?>
 			<tr>
 				<td><?php echo $value['usuario']?></td>

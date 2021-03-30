@@ -17,8 +17,8 @@
 					$verificar = $verificar->rowCount();
 					if($verificar == 0){
 						$slug = Painel::gerarSlug($nome);
-						$sql = MySql::conectar()->prepare("INSERT INTO `$tabela` VALUES(null,?,?,?)");
-						$sql->execute(array($nome,$slug,'0'));
+						$sql = MySql::conectar()->prepare("INSERT INTO `$tabela` VALUES(null,?,?)");
+						$sql->execute(array($nome,$slug));
 						Painel::alert('sucesso','Categoria cadastrada com sucesso');
 					}else{
 						Painel::alert('erro','Essa categoria já existe');

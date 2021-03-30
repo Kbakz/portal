@@ -107,5 +107,11 @@
 			$sql->execute(array($arr));
 			return $sql->fetch();
 		}
+
+		public static function recover($post){
+			if(isset($_POST[$post])){
+				echo $_POST[$post];
+			}
+		}
 	}
 ?>

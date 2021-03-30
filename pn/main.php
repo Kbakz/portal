@@ -12,8 +12,9 @@
 	<title>Painel de controle</title>
 </head>
 <body>
+	<p class="btn-menu"><i class="fas fa-angle-double-left"></i></p>
 	<div class="menu-painel">
-		<p><i class="fas fa-angle-double-left"></i></p>
+		
 		<div class="img-usuario">
 			<?php
 				if ($_SESSION['img'] == '') {			
@@ -57,6 +58,7 @@
 	</div><!--conteudo-painel-->
 <script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
 <script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
+<script src="https://cdn.tiny.cloud/1/0rrltnkfbagfy4xs0ecglj5699u6f9a9hfliycmygtyusqxd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL?>js/main.js"></script>
 </body>
 </html>
