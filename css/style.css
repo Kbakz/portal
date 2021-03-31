@@ -226,17 +226,16 @@ aside.scroll{
 }
 
 aside > p{
-	color: white;
-	text-align: right;
-	font-size: 30px;
 	background-color: #012b62;
-	padding: 5px 10px;
 	display: inline-block;
 	position: relative;
-	top: -17px;
-	left: 172px;
+	top: -15px;
+	left: 178px;
 	cursor: pointer;
-	border-radius: 0 30px 30px 0;
+	font-size: 30px;
+	color: white;
+	padding: 10px 15px;
+	border-radius: 0 50px 50px 0;
 }
 
 aside .categorias{
