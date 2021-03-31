@@ -6,7 +6,7 @@
 			<select name="categoria">
 
 				<option selected>Todas as categorias</option>
-				<option>Esporte</option>
+				<option value="esporte">Esporte</option>
 				<option>Saúde</option>
 		
 			</select>

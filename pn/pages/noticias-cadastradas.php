@@ -6,10 +6,31 @@
 		header('location:'.INCLUDE_PATH_PAINEL.'noticias-cadastradas');
 		die();
 	}
+
+	$paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+	$porPagina = 15;
+	$query = ($paginaAtual - 1) * $porPagina;
 ?>
 <div class="conteudo-painel">
 	<h2>Notícias cadastradas</h2>
-
+	<?php
+	$ordem = 'data';
+		if(isset($_POST['acao'])){
+			$ordem = $_POST['ordenar'];
+		}
+	?>
+	<form class="filtro-painel" method="post">
+		<label>Ordenar por:</label>
+		<select name="ordenar">
+			<option <?php if($ordem == 'data') echo "selected";?> value="data">Data (Mais recente)</option>
+			<option <?php if($ordem == 'data DESC') echo "selected";?> value="data DESC">Data (Mais antigo)</option>
+			<option <?php if($ordem == 'titulo') echo "selected";?> value="titulo">titulo (A - Z)</option>
+			<option <?php if($ordem == 'titulo DESC') echo "selected";?> value="titulo DESC">titulo (Z - A)</option>
+			<option <?php if($ordem == 'categoria_id') echo "selected";?> value="categoria_id">Categorias</option>
+			<option <?php if($ordem == 'autor') echo "selected";?> value="autor">Autor</option>
+		</select>
+		<input type="submit" name="acao" value="filtrar">
+	</form>
 	<div class="table-overflow"> 
 		<table> 
 			<tr> 
@@ -20,7 +41,7 @@
 				<th>#</th> 
 			</tr> 
 			<?php 
-				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY data"); 
+				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY $ordem LIMIT $query,$porPagina"); 
 				$sql->execute(); 
 				$noticias = $sql->fetchAll();
 		
@@ -38,6 +59,20 @@
 		</table>
 	</div><!--table-overflow-->
 	<div class="paginacao">
-		
+		<?php
+			$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela`");
+			$sql->execute();
+			$sql = $sql->fetchAll();
+			$totalPaginas = ceil(count($sql) / $porPagina);
+
+			for($i = 1; $i <= $totalPaginas; $i++){
+				if($totalPaginas != 1){
+					if( $i == $paginaAtual)
+						echo '<a class="selecionado" href="'.INCLUDE_PATH_PAINEL.'/noticias-cadastradas?pagina='.$i.'">'.$i.'</a>';
+					else
+						echo '<a href="'.INCLUDE_PATH_PAINEL.'/noticias-cadastradas?pagina='.$i.'">'.$i.'</a>';
+				}
+			}
+		?>
 	</div><!--paginacao-->
 </div><!--conteudo-painel-->

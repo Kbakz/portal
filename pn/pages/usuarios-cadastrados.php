@@ -31,6 +31,9 @@
 				foreach ($usuarios as $key => $value) {
 					if($value['cargo'] == 0){
 						continue;
+					}else if($_SESSION['cargo'] == 1){
+						if($value['cargo'] == 1)
+							continue;
 					}
 			?>
 			<tr>

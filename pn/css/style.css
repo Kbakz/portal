@@ -307,6 +307,44 @@ table a.excluir{ background: #FF4646}
 
 table a.order{ background: #204B8B}
 
+.conteudo-painel form.filtro-painel{
+	padding-top: 30px;
+	width: 250px;
+	margin: 0;
+}
+
+.conteudo-painel form.filtro-painel label{
+	display: block;
+	font-size: 18px;
+	margin: 20px 0px 5px 15px;
+	color: #646464;
+}
+
+.conteudo-painel form.filtro-painel select{
+	outline: 0;
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	color: #646464;
+	border: 1px solid #ccc;
+	padding-left: 15px;
+	border-radius: 20px;;
+}
+
+
+.conteudo-painel form.filtro-painel input[type=submit]{
+	width: 100%;
+	height: 35px;
+	background-color: #ff6e46;
+	border: none;
+	border-radius: 30px;
+	color: #012b62;
+	font-size: 16px;
+	margin-top: 10px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
 .conteudo-painel form{
 	padding-top: 30px;
 	width: 100%;
@@ -383,15 +421,14 @@ table a.order{ background: #204B8B}
 .paginacao a{
 	text-decoration: none;
 	padding: 5px;
-	background: #ccc;
-	color: #303030;
-}
-
-.paginacao a.selecionado{
-	background: #646464;
+	background: #012B62;
 	color: white;
 	margin: 0 5px;
 	display: inline-block;
+}
+
+.paginacao a.selecionado{
+	background: #FF6E46;
 }
 
 @media screen and (max-width: 720px){
