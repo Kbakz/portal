@@ -1,5 +1,11 @@
 <?php
 	$tabela = 'tb_admin.noticias';
+	if(isset($_GET['deletar'])){
+		$idExcluir = intval($_GET['deletar']);
+		Painel::deletar($tabela,$idExcluir);
+		header('location:'.INCLUDE_PATH_PAINEL.'noticias-cadastradas');
+		die();
+	}
 ?>
 <div class="conteudo-painel">
 	<h2>Notícias cadastradas</h2>
@@ -31,5 +37,7 @@
 			<?php }?>
 		</table>
 	</div><!--table-overflow-->
-	
+	<div class="paginacao">
+		
+	</div><!--paginacao-->
 </div><!--conteudo-painel-->
