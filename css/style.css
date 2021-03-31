@@ -184,7 +184,7 @@ header nav.desktop a{
 }
 
 header nav.desktop a:hover{
-	color: #adadad
+	color: #adadad;
 }
 
 header.scroll .social{
@@ -518,6 +518,100 @@ section.scroll{
 	cursor: pointer;
 }
 
+/*pagina classificados*/
+
+.form-classificado {
+	width: 100%;
+	padding: 20px;
+	background-color: white;
+	text-align: right;
+}
+
+.form-classificado input[type=text] {
+	width: 200px;
+	height: 30px;
+	margin-right: -10px;
+	padding-left: 10px;
+	border: none;
+	border-radius: 30px 0 0 30px;
+	outline: none;
+	background-color: #cccccc;
+	transition: 0.5s;
+}
+
+.form-classificado input[type=text]:focus {
+	width: 300px;
+}
+
+.form-classificado input[type=submit] {
+	height: 30px;
+	border: none;
+	padding: 0 10px;
+	border-radius: 0 30px 30px 0;
+	background-color: #ff6e46;
+}
+
+.classificados {
+	width: 100%;
+	padding: 20px;
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.classificado-single {
+	width: 23%;
+	height: 100%;
+	margin-top: 20px;
+	background-color: #204B8B;
+	box-shadow: 3px 6px 15px -1px #ACACAC;
+}
+
+.classificado-single img {
+	width: 100%;
+}
+
+.classificado-texto {
+	text-align: center;
+	font-size: 16px;
+	color: white;
+	padding: 10px;
+	padding-bottom: 15px;
+}
+
+.classificado-texto h2 {
+	font-size: 25px;
+	font-weight: normal;
+	margin-bottom: 10px;
+	color: #a1a1a1;
+}
+
+.classificado-texto time:nth-of-type(1) {
+	color: #88ef7c;
+}
+
+.classificado-texto time:nth-of-type(2) {
+	color: #EA4D4D;
+}
+
+.classificado-texto span {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.classificado-texto a {
+	padding: 10px 20px;
+	color: #012b62;
+	background-color: #ff6e46;
+	border-radius: 30px;
+	margin-top: 10px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+
+
 @media screen and (max-width: 1024px){
 	header.scroll form{
 		text-align: center;
@@ -541,11 +635,19 @@ section.scroll{
 		top: 140px;
 		left: 0;
 	}
+
+	.classificado-single {
+		width: 48%;
+	}
 }
 
 @media screen and (max-width: 700px){
 	.noticia-single{
 		width: 50%;
+	}
+
+	.classificado-single {
+		width: 100%;
 	}
 }
 

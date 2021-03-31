@@ -41,7 +41,7 @@
 						<li <?php Site::selectedMenu('noticias');@Site::selectedMenu('');?>><a href="<?php echo INCLUDE_PATH?>">Notícias</a></li>
 						<li <?php Site::selectedMenu('quem-somos');?>><a href="<?php echo INCLUDE_PATH?>quem-somos">Quem somos</a></li>
 						<li <?php Site::selectedMenu('classificados');?>><a href="<?php echo INCLUDE_PATH?>classificados">Classificados</a></li>
-						<li <?php Site::selectedMenu('publicidade');?>><a href="<?php echo INCLUDE_PATH?>publicidade">Publicidade</a></li>
+						<li <?php Site::selectedMenu('publicidade');?>><a href="<?php echo INCLUDE_PATH?>publicidade">Apoiadores</a></li>
 					</ul>
 				</nav><!--desktop-->
 
@@ -51,7 +51,7 @@
 						<li><a href="<?php echo INCLUDE_PATH?>">Notícias</a></li>
 						<li><a href="<?php echo INCLUDE_PATH?>quem-somos">Quem somos</a></li>
 						<li><a href="<?php echo INCLUDE_PATH?>classificados">Classificados</a></li>
-						<li><a href="<?php echo INCLUDE_PATH?>publicidade">Publicidade</a></li>
+						<li><a href="<?php echo INCLUDE_PATH?>publicidade">Apoiadores</a></li>
 					</ul>
 				</nav><!--mobile-->
 				
@@ -70,6 +70,9 @@
 		?>
 	</section><!--conteudo-->
 
+	<footer>
+		Todos os direitos reservados
+	</footer>
 
 	<script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
 	<script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
