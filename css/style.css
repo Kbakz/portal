@@ -620,6 +620,9 @@ section.scroll{
 	padding: 20px 35px;
 	text-align: center;
 	background-color: white;
+}
+
+.apoiador-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -657,6 +660,75 @@ section.scroll{
 	text-align: center;
 }
 
+.form-apoiador {
+	width: 100%;
+	padding: 20px;
+	margin-top: 40px;
+	background-color: white;
+}
+
+.form-apoiador p {
+	text-align: center;
+	font-size: 16px;
+	color: #e0e0e0;
+}
+
+.form-apoiador form {
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.form-apoiador input:not([type="submit"]) {
+	width: 100%;
+	height: 35px;
+	padding-left: 15px;
+	outline: none;
+	color: #656565;
+	font-size: 16px;
+	background-color: #f2f2f2;
+	border: none;
+	border-radius: 30px;
+}
+
+.form-apoiador textarea {
+	width: 100%;
+	height: 140px;
+	min-height: 35px;
+	padding: 15px;
+	resize: vertical;
+	outline: none;
+	color: #656565;
+	font-size: 16px;
+	background-color: #f2f2f2;
+	border: none;
+	border-radius: 15px;
+}
+
+.form-apoiador label {
+	margin: 20px 0 5px 15px;
+	text-align: left;
+	display: inline-block;
+	color: #303030;
+	font-size: 20px;
+	font-weight: 300;
+	cursor: pointer;
+}
+
+.form-apoiador input[type=submit] {
+	width: 100%;
+	height: 35px;
+	background-color: #ff6e46;
+	border: none;
+	border-radius: 30px;
+	color: #012b62;
+	font-size: 16px;
+	margin-top: 10px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
 @media screen and (max-width: 1024px){
 	header.scroll form{
 		text-align: center;
@@ -686,6 +758,12 @@ section.scroll{
 	}
 }
 
+@media screen and (max-width: 800px){
+	.apoiador-single {
+	width: 48%;
+	}
+}
+
 @media screen and (max-width: 700px){
 	.noticia-single{
 		width: 50%;
@@ -693,6 +771,12 @@ section.scroll{
 
 	.classificado-single {
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 560px){
+	.apoiador-single {
+	width: 100%;
 	}
 }
 
