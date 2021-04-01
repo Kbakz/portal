@@ -42,6 +42,8 @@
 			<h3>Gerenciar site</h3>
 			<a <?php Site::selectedMenu('cadastrar-classificado'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-classificado">Cadastrar classificado</a>
 			<a <?php Site::selectedMenu('gerenciar-classificados'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>gerenciar-classificados">Gerenciar classificados</a>
+			<a <?php Site::selectedMenu('adicionar-apoiador'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>adicionar-apoiador">Adicionar apoiador</a>
+			<a <?php Site::selectedMenu('gerenciar-apoiadores'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>gerenciar-apoiadores">Gerenciar apoiadores</a>
 			<a <?php Site::selectedMenu('editar-site'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-site">Editar site</a>
 		</div><!--itens-menu-->
 		<div class="itens-menu">

@@ -5,17 +5,20 @@
     		<input type="submit" value="Buscar">
     	</form>
     	<div class="classificados">
-    		<?php 
-    			for ($i=0; $i < 8; $i++) { 
+    		<?php
+                $classificados = MySql::conectar()->prepare("SELECT * FROM `tb_admin.classificados`");
+                $classificados->execute();
+                $classificados = $classificados->fetchAll();
+    			foreach ($classificados as $key => $value) {
     		?>
     		<div class="classificado-single">
-    			<img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/60620bb1a8c0b.jpg">
+    			<img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['img']?>">
     			<div class="classificado-texto">
-    				<h2>Nome da loja</h2>
-    				<p>Funcionamento: <time>08:30</time> - <time>18:30</time></p>
-    				<span>Segunda a Sexta</span>
-    				<p>(74) 9 9900-0123</p>
-    				<a href="">Mais informações</a>
+    				<h2><?php echo $value['nome']?></h2>
+    				<p>Funcionamento: <time><?php echo $value['horario_abrir']?></time> - <time><?php echo $value['horario_fechar']?></time></p>
+    				<span><?php echo $value['dias']?></span>
+    				<p><?php echo $value['telefone']?></p>
+    				<a href="http://<?php echo $value['link']?>">Mais informações</a>
     			</div>
     		</div>
     		<?php }?>

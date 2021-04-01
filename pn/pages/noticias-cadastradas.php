@@ -2,8 +2,12 @@
 	$tabela = 'tb_admin.noticias';
 	if(isset($_GET['deletar'])){
 		$idExcluir = intval($_GET['deletar']);
+		$selecionarImg = MySql::conectar()->prepare("SELECT imagem FROM `$tabela` WHERE id = ?");
+		$selecionarImg->execute(array($idExcluir));
+		$selecionarImg = $selecionarImg->fetch();
+		Painel::deleteFile($selecionarImg['imagem']);
 		Painel::deletar($tabela,$idExcluir);
-		header('location:'.INCLUDE_PATH_PAINEL.'noticias-cadastradas');
+		header('location:'.INCLUDE_PATH_PAINEL.'gerenciar-classificados');
 		die();
 	}
 

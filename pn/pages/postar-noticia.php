@@ -8,14 +8,19 @@
 	<form method="post" enctype="multipart/form-data">
 		<?php
 			if(isset($_POST['acao'])){
-				$categoriaId = $_POST['categoria_id'];
+				$categoriaId = '';
+				if(isset($_POST['categoria_id'])){
+					$categoriaId = $_POST['categoria_id'];
+				}
 				$titulo = $_POST['titulo'];
 				$conteudo = $_POST['conteudo'];
 				$imagem = $_FILES['imagem'];
 				$data = $_POST['data'];
 				$autor = $_POST['autor'];
 
-				if($titulo == ''){
+				if($categoriaId == ''){
+					Painel::alert('erro','Adicione ou crie uma categoria');
+				}else if($titulo == ''){
 					Painel::alert('erro','Adicione um título');
 				}else if($conteudo == ''){
 					Painel::alert('erro','Adicione o conteudo');
@@ -33,7 +38,7 @@
 							$sql->execute(array($categoriaId,$titulo,$conteudo,$imagem,$data,$autor,$slug));
 							Painel::alert('sucesso','Notícia cadastrada com sucesso');
 						}else{
-							Painel::alert('erro','Já existe uma categoria com esse nome');
+							Painel::alert('erro','Já existe uma notícia com esse nome');
 						}
 					}else{
 						Painel::alert('erro','Selecione uma imagem válida');

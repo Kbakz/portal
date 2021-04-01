@@ -41,7 +41,7 @@
 								Painel::alert('erro','Ocorreu um erro ao atualizar');
 							}
 						}else{
-							Painel::alert('erro','Já existe uma categoria com esse nome');
+							Painel::alert('erro','Já existe uma noticia com esse nome');
 						}
 					}else{
 						Painel::alert('erro','Imagem inválida');

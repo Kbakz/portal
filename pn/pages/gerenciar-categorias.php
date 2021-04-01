@@ -4,6 +4,16 @@
 	if(isset($_GET['deletar'])){
 		$idExcluir = intval($_GET['deletar']);
 		Painel::deletar($tabela,$idExcluir);
+		$noticias = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias` WHERE categoria_id = ?");
+		$noticias->execute(array($idExcluir));
+		$noticias = $noticias->fetchAll();
+
+		foreach ($noticias as $key => $value) {
+			$imgDelete = $value['imagem'];
+			Painel::deleteFile($imgDelete);
+		}
+		$noticias = MySql::conectar()->prepare("DELETE FROM `tb_admin.noticias` WHERE categoria_id = ?");
+		$noticias->execute(array($idExcluir));
 		header('location:'.INCLUDE_PATH_PAINEL.'gerenciar-categorias');
 		die();
 	}
