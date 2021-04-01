@@ -27,7 +27,7 @@ $(function(){
 
 	 tinymce.init({
         selector: '#tinymce',
-        plugins: 'image imagetools autosave link emoticons'
+        plugins: 'image imagetools emoticons'
       });
 
 	 $('.horario').mask('00:00');

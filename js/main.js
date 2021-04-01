@@ -5,16 +5,16 @@ $(function(){
 	function srollMenu(){
 		$(window).scroll(function(){
 			var windowTop = $(window).scrollTop();
-	
-			console.log(windowTop);
 			if(windowTop != 0){
 				$('header').addClass('scroll');
 				$('aside').addClass('scroll');
 				$('section').addClass('scroll');
+				$('footer').addClass('scroll');
 			}else{
 				$('header').removeClass('scroll');
 				$('aside').removeClass('scroll');
 				$('section').removeClass('scroll');
+				$('footer').removeClass('scroll');
 			}
 		})
 	

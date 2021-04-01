@@ -25,34 +25,36 @@
 	</div><!--publicidades-->
 
 	<div class="noticia-destaque">
+		<?php
+			$destaque = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias` WHERE destaque = 'true'");
+            $destaque->execute();
+            $destaque = $destaque->fetch();
+           
+		?>
 		<div class="capa-destaque">
-
+			<img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $destaque['imagem']?>">
 		</div><!--capa-destaque-->
 		<div class="conteudo-destaque">
-			<h1>Notícia destaque</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h1><?php echo $destaque['titulo']?></h1>
+			<p><?php echo substr($destaque['conteudo'],0,700)?>... </p>
 			<a href="">Ver mais</a>
 		</div><!--conteudo-destaque-->
 	</div><!--noticia-destaque-->
 
 	<div class="noticias">
 		<?php
-			for ($i=0; $i < 12; $i++) { 
+			$noticias = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias`");
+            $noticias->execute();
+            $noticias = $noticias->fetchAll();
+    		foreach ($noticias as $key => $value) {
 		?>
 		<div class="noticia-single">
 			<div class="capa-noticia">
-
+				<img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['imagem']?>">
 			</div><!--capa-noticia-->
 			<div class="conteudo-noticia">
-				<h3>Notícia single</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt eiusmod
-				tempor incididun...</p>
+				<h3><?php echo $value['titulo']?></h3>
+				<p><?php echo substr($value['conteudo'],0,300)?>...</p>
 				<a href="">Ver mais</a>
 			</div><!--conteudo-noticia-->
 		</div><!--noticia-single-->

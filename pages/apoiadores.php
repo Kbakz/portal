@@ -6,13 +6,16 @@
             </div>
             <div class="apoiador-container">
                 <?php 
-                    for ($i=0; $i < 6; $i++) { 
+                    $apoiadores = MySql::conectar()->prepare("SELECT * FROM `tb_admin.apoiadores`");
+                    $apoiadores->execute();
+                    $apoiadores = $apoiadores->fetchAll();
+                    foreach ($apoiadores as $key => $value) {
                 ?>
                 <div class="apoiador-single">
-                    <img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/60620c0f0a39e.jpg">
+                    <img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['imagem']?>">
                     <div class="apoiador-texto">
-                        <p>Nome do apoiador</p>
-                        <a href=""><i class="fas fa-external-link-alt"></i></a>
+                        <p><?php echo $value['nome']?></p>
+                        <a href="http://<?php echo $value['link']?>"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <?php }?>

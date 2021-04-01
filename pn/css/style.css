@@ -110,7 +110,7 @@ section.box-login input[type=submit]{
 
 .menu-painel{
 	position: fixed;
-	left: -300px;
+	left: 0;
 	width: 300px;
 	height: 100%;
 	background-color: rgba(32, 75, 139, 0.9);
@@ -379,6 +379,25 @@ table a.order{ background: #204B8B}
 	border: 1px solid #ccc;
 	padding-left: 15px;
 	border-radius: 20px;
+}
+
+.conteudo-painel input[type=radio]{
+	outline: 0;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	color: #303030;
+	border: 1px solid #ccc;
+	margin-left: 15px;
+	margin-top: 15px;
+	border-radius: 20px;
+}
+
+.conteudo-painel label.destaque{
+	display: inline-block;
+	font-size: 15px;
+	margin: 0;
+	color: #646464;
 }
 
 .conteudo-painel textarea{

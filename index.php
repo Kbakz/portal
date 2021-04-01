@@ -71,7 +71,7 @@
 	</section><!--conteudo-->
 
 	<footer>
-		Todos os direitos reservados
+		<p>&copy2021 - Todos os direitos reservados</p>
 	</footer>
 
 	<script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>

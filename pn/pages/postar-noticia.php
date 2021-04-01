@@ -71,7 +71,7 @@
 
 		<input type="hidden" name="data" value="<?php echo date('Y-m-d')?>">
 		<input type="hidden" name="autor" value="<?php echo $_SESSION['nome']?>">
-
+		<input type="hidden" name="destaque" value="false">
 		<input type="submit" name="acao" value="Cadastrar">
 	</form>
 

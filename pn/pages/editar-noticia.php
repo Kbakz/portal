@@ -35,6 +35,12 @@
 							$slug = Painel::gerarSlug($titulo);
 							$sql = MySql::conectar()->prepare("UPDATE `$tabela` SET categoria_id = ?,titulo = ?,conteudo = ?, imagem = ?,slug = ? WHERE id = ?");
 							if($sql->execute(array($categoria_id,$titulo,$conteudo,$imagem,$slug,$id))){
+								if($_POST['destaque'] == 'true'){
+									$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'true' WHERE id = ?");
+									$destaque->execute(array($id));
+									$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'false' WHERE id != ?");
+									$destaque->execute(array($id));
+								}
 								Painel::alert('sucesso','Notícia atualizada com sucesso');
 								$noticia = Painel::selecionar($tabela,'id',$id);
 							}else{
@@ -54,7 +60,14 @@
 					if($verificar == 0){
 						$slug = Painel::gerarSlug($titulo);
 						$sql = MySql::conectar()->prepare("UPDATE `$tabela` SET categoria_id = ?,titulo = ?,conteudo = ?, imagem = ?,slug = ? WHERE id = ?");
+						
 						if($sql->execute(array($categoria_id,$titulo,$conteudo,$imagem,$slug,$id))){
+							if($_POST['destaque'] == 'true'){
+								$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'true' WHERE id = ?");
+								$destaque->execute(array($id));
+								$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'false' WHERE id != ?");
+								$destaque->execute(array($id));
+							}
 							Painel::alert('sucesso','Notícia atualizada com sucesso');
 							$noticia = Painel::selecionar($tabela,'id',$id);
 						}else{
@@ -85,7 +98,9 @@
 		<input type="text" name="titulo" value="<?php echo $noticia['titulo'] ?>">
 		<label>Conteúdo:</label>
 		<textarea id="tinymce" name="conteudo"><?php echo $noticia['conteudo'] ?></textarea>
-		
+		<label>Tornar notícia destaque:</label>
+		<input type="radio" name="destaque" value="true" id="destaque" <?php if($noticia['destaque'] == 'true') echo 'checked'?>>
+		<label for="destaque" class="destaque">Destaque</label>
 		<label>Imagem:</label>
 		<input type="file" name="imagem">
 		<input type="hidden" name="imagem_atual" value="<?php echo $noticia['imagem']?>">
