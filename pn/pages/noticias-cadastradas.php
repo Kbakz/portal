@@ -15,11 +15,15 @@
 	<h2>Notícias cadastradas</h2>
 	<?php
 	$ordem = 'data';
+	$busca = '';
 		if(isset($_POST['acao'])){
 			$ordem = $_POST['ordenar'];
+			$busca = $_POST['busca'];
 		}
 	?>
 	<form class="filtro-painel" method="post">
+		<label>Pesquisar noticia:</label>
+		<input type="search" name="busca">
 		<label>Ordenar por:</label>
 		<select name="ordenar">
 			<option <?php if($ordem == 'data') echo "selected";?> value="data">Data (Mais recente)</option>
@@ -41,7 +45,7 @@
 				<th>#</th> 
 			</tr> 
 			<?php 
-				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY $ordem LIMIT $query,$porPagina"); 
+				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` WHERE titulo LIKE '%$busca%' ORDER BY $ordem LIMIT $query,$porPagina"); 
 				$sql->execute(); 
 				$noticias = $sql->fetchAll();
 		

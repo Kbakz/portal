@@ -39,6 +39,12 @@
 			<a <?php Site::selectedMenu('noticias-cadastradas');?> href="<?php echo INCLUDE_PATH_PAINEL?>noticias-cadastradas">Notícias cadastradas</a>
 		</div><!--itens-menu-->
 		<div class="itens-menu">
+			<h3>Gerenciar site</h3>
+			<a <?php Site::selectedMenu('cadastrar-classificado'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-classificado">Cadastrar classificado</a>
+			<a <?php Site::selectedMenu('gerenciar-classificados'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>gerenciar-classificados">Gerenciar classificados</a>
+			<a <?php Site::selectedMenu('editar-site'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>editar-site">Editar site</a>
+		</div><!--itens-menu-->
+		<div class="itens-menu">
 			<h3>Gerenciar usuarios</h3>
 			<a <?php Site::selectedMenu('adicionar-usuario'); Permissao::verificaPermissaoMenu(0)?> href="<?php echo INCLUDE_PATH_PAINEL?>adicionar-usuario">Adicionar novo usuario</a>
 			<a <?php Site::selectedMenu('usuarios-cadastrados'); Permissao::verificaPermissaoMenu(1)?> href="<?php echo INCLUDE_PATH_PAINEL?>usuarios-cadastrados">Usuarios cadastrados</a>
@@ -59,6 +65,7 @@
 <script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
 <script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
 <script src="https://cdn.tiny.cloud/1/0rrltnkfbagfy4xs0ecglj5699u6f9a9hfliycmygtyusqxd/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL?>js/jquery.mask.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL?>js/main.js"></script>
 </body>
 </html>

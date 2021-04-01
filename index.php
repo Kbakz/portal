@@ -41,7 +41,7 @@
 						<li <?php Site::selectedMenu('noticias');@Site::selectedMenu('');?>><a href="<?php echo INCLUDE_PATH?>">Notícias</a></li>
 						<li <?php Site::selectedMenu('quem-somos');?>><a href="<?php echo INCLUDE_PATH?>quem-somos">Quem somos</a></li>
 						<li <?php Site::selectedMenu('classificados');?>><a href="<?php echo INCLUDE_PATH?>classificados">Classificados</a></li>
-						<li <?php Site::selectedMenu('publicidade');?>><a href="<?php echo INCLUDE_PATH?>publicidade">Apoiadores</a></li>
+						<li <?php Site::selectedMenu('apoiadores');?>><a href="<?php echo INCLUDE_PATH?>apoiadores">Apoiadores</a></li>
 					</ul>
 				</nav><!--desktop-->
 

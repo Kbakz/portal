@@ -29,4 +29,7 @@ $(function(){
         selector: '#tinymce',
         plugins: 'image imagetools autosave link emoticons'
       });
+
+	 $('.horario').mask('00:00');
+	 $('.telefone').mask('(00) 00000-0000');
 })

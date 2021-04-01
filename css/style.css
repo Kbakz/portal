@@ -412,6 +412,10 @@ section.scroll{
 	background: gray;
 }
 
+.info .logo img{
+	max-width: 100%;
+}
+
 .info p {
 	width: 60%;
 	padding: 0 20px;
@@ -439,7 +443,7 @@ section.scroll{
 	justify-content: center;
 	width: 160px;
 	height: 130px;
-	margin: 0 10px;
+	margin: 10px;
 	background-color: #f2f2f2;
 }
 
@@ -630,7 +634,6 @@ section.scroll{
 }
 
 .apoiador-single img {
-	padding: 10px 90px;
 	width: 100%;
 }
 
