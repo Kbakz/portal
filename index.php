@@ -4,6 +4,9 @@
  	Site::contarVisitas();
 
  	$url = isset($_GET['url']) ? $_GET['url'] : 'noticias';
+ 	$sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.config`");
+    $sql->execute();
+    $sobre = $sql->fetch();
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,9 +29,9 @@
 			</div><!--logo-->
 
 				<div class="social">
-					<a href=""><i class="fab fa-facebook-f"></i></a>
-					<a href=""><i class="fab fa-twitter"></i></a>
-					<a href=""><i class="fab fa-instagram"></i></a>
+					<a href="http://<?php echo $sobre['social_1']?>"><i class="<?php echo $sobre['icone1']?>"></i></a>
+					<a href="http://<?php echo $sobre['social_2']?>"><i class="<?php echo $sobre['icone2']?>"></i></a>
+					<a href="http://<?php echo $sobre['social_3']?>"><i class="<?php echo $sobre['icone3']?>"></i></a>
 				</div><!--social-->
 
 				<nav class="desktop">
