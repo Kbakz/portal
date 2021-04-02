@@ -329,8 +329,24 @@ section.scroll{
 	text-decoration: none;
 }
 
+.header-noticias h2{
+	color: #303030;
+	text-align: center;
+	margin-top: 30px;
+	font-size: 30px;
+}
+
+.header-noticias h2 span{
+	color: #012B62;
+}
+
 .noticias{
 	padding: 20px 0;
+	background-color: white;
+	margin-top: 30px;
+}
+
+.noticias-container{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;

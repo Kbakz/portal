@@ -46,7 +46,7 @@
 				<nav class="mobile">
 					<span><i class="fas fa-stream"></i></span>
 					<ul>
-						<li><a href="<?php echo INCLUDE_PATH?>">Notícias</a></li>
+						<li><a href="<?php echo INCLUDE_PATH?>noticias">Notícias</a></li>
 						<li><a href="<?php echo INCLUDE_PATH?>quem-somos">Quem somos</a></li>
 						<li><a href="<?php echo INCLUDE_PATH?>classificados">Classificados</a></li>
 						<li><a href="<?php echo INCLUDE_PATH?>publicidade">Apoiadores</a></li>
@@ -63,7 +63,7 @@
 			if(file_exists('pages/'.$url.'.php')){
 				include('pages/'.$url.'.php');
 			}else{
-				include('pages/error.php');
+				include('pages/noticias.php');
 			}
 		?>
 	</section><!--conteudo-->
