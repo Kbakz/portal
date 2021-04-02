@@ -43,5 +43,13 @@ $(function(){
 
 		})
 	}
+
+	$('select#cat').change(function(){
+		location.href=include_path+$(this).val();
+	});
+
+	$('select#ordem').change(function(){
+		$('form#form-ordem').submit();
+	});
 	
 })

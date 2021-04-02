@@ -1,9 +1,9 @@
 <?php
 	$url = explode('/',@$_GET['url']);
 
-	if (!isset($url[2])) {
+	if (!isset($url[1])) {
 		$categoria = MySql::conectar()->prepare("SELECT * FROM `tb_admin.categoria` WHERE slug = ?");
-		$categoria->execute(array(@$url[1]));
+		$categoria->execute(array(@$url[0]));
 		$categoria = $categoria->fetch();
 ?>
 <aside>
@@ -11,7 +11,7 @@
 	<div class="categorias">
 		<h2><i class="fas fa-filter"></i> Categorias</h2>
 		<form>
-			<select name="categoria">
+			<select id="cat" name="categoria">
 
 				<option selected>Todas as categorias</option>
 				<?php
@@ -29,16 +29,26 @@
 
 	<div class="categorias">
 		<h2><i class="fas fa-sort-amount-down"></i> Ordem</h2>
-		<form>
-			<select name="ordem">
-
+		<form id="form-ordem" method="post">
+			<select id="ordem" name="ordem">
+				<?php
+				$order = 'data';
+				if(isset($_POST['ordem'])){
+					$order = $_POST['ordem'];
+				}
+			?>
 				<option selected disabled>ordenar notícias</option>
-				<option>Data (mais recente)</option>
-				<option>Data (mais antigo)</option>
-				<option>Título (A - Z)</option>
-				<option>Título (Z - A)</option>		
+				<option <?php if($order == 'data') echo "selected";?> value="data">Data (Mais recente)</option>
+				<option <?php if($order == 'data DESC') echo "selected";?> value="data DESC">Data (Mais antigo)</option>
+				<option <?php if($order == 'titulo') echo "selected";?> value="titulo">titulo (A - Z)</option>
+				<option <?php if($order == 'titulo DESC') echo "selected";?> value="titulo DESC">titulo (Z - A)</option>
 			</select>
 		</form>
+		<?php
+			if(isset($_POST['ordem'])){
+				echo '<script> alert('.$_POST['ordem'].')</script>';
+			}
+		?>
 	</div><!--categoria-->
 	<div class="contato-aside">
 		<p>Entre em contato conosco <a href="<?php echo INCLUDE_PATH?>quem-somos#contato">aqui</a></p>
@@ -83,14 +93,13 @@
 	<div class="noticias">
 		<div class="header-noticias">
 			<?php
-			$porPagina = 2;
-			$order = 'data';
+			$porPagina = 15;
 				if (!isset($_POST['busca'])) {
 					if(@$categoria['nome'] == ''){
 						echo "<h2>Visualizando todas as notícias</h2>";
 					}else{
 						echo "<h2>Visualizando todas notícias em <span>".$categoria['nome']."</span></h2>";
-					}				
+					}
 				}
 
 				$query = "SELECT * FROM `tb_admin.noticias` ";
@@ -141,9 +150,11 @@
 					$query.= "ORDER BY $order";
 
 				}
+				echo $query;
 				$sql = MySql::conectar()->prepare($query);
 				$sql->execute();
 				$noticias = $sql->fetchAll();
+				
 			?>
 		</div><!--header-noticias-->
 		<div class="noticias-container">

@@ -22,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>css/style.css">
 </head>
 <body>
+	<base base="<?php echo INCLUDE_PATH?>">
 	<header>
 		<div class="center">
 			<div class="logo">
@@ -73,6 +74,7 @@
 	</footer>
 
 	<script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
+	<script src="<?php echo INCLUDE_PATH?>js/constants.js"></script>
 	<script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
 	<script src="<?php echo INCLUDE_PATH?>js/main.js"></script>
 </body>
