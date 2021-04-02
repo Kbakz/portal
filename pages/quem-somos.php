@@ -1,7 +1,5 @@
 <?php
-    $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.config`");
-    $sql->execute();
-    $sobre = $sql->fetch();
+    
 ?>
 <div class="box-content">
     <div class="center">
