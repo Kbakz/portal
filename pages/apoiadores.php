@@ -30,9 +30,9 @@
                 <label for="nome">Nome da empresa ou do seu negocio:</label>
                 <input type="text" name="nome" placeholder="ex:minha empresa" id="nome">
                 <label for="email">E-mail para contato:</label>
-                <input type="email" name="email" placeholder="ex:empresa@gmail.com" id="email">
+                <input type="email" name="email" placeholder="ex:exemplo@empresa.com" id="email">
                 <label for="link">Link da página ou blog:</label>
-                <input type="url" name="link" placeholder="ex:https://instagram.com/empresa" id="link">
+                <input type="url" name="link" placeholder="ex:https://empresa.com/exemplo" id="link">
                 <label for="mensagem">Mande sua mensagem:</label>
                 <textarea placeholder="ex:gostaria de fazer parte dos apoiadores..." id="mensagem"></textarea>
                 <input type="submit">

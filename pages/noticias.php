@@ -1,7 +1,7 @@
 <aside>
 	<p><i class="fas fa-angle-double-right"></i></p>
 	<div class="categorias">
-		<h2><i class="fas fa-filter"></i></h2>
+		<h2><i class="fas fa-filter"></i> Categorias</h2>
 		<form>
 			<select name="categoria">
 
@@ -12,10 +12,36 @@
 			</select>
 		</form>
 	</div><!--categoria-->
+
+	<div class="categorias">
+		<h2><i class="fas fa-sort-amount-down"></i> Ordem</h2>
+		<form>
+			<select name="ordem">
+
+				<option selected disabled>ordenar notícias</option>
+				<option>Data (mais recente)</option>
+				<option>Data (mais antigo)</option>
+				<option>Título (A - Z)</option>
+				<option>Título (Z - A)</option>		
+			</select>
+		</form>
+	</div><!--categoria-->
 	<div class="contato-aside">
 		<p>Entre em contato conosco <a href="<?php echo INCLUDE_PATH?>quem-somos#contato">aqui</a></p>
 	</div>
 </aside>
+	<?php
+		$busca = '';
+		if (isset($_POST['acao'])) {
+			$busca = $_POST['busca'];
+		}
+	?>
+<div class="center">
+	<form class="form-noticia" method="post">
+		<input type="text" name="busca" placeholder="Buscar...">
+		<button type="submit" name="acao"><i class="fas fa-search"></i></button>
+	</form>
+</div>
 
 <div class="box-content">
 	<div class="publi">
@@ -29,7 +55,6 @@
 			$destaque = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias` WHERE destaque = 'true'");
             $destaque->execute();
             $destaque = $destaque->fetch();
-           
 		?>
 		<div class="capa-destaque">
 			<img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $destaque['imagem']?>">
@@ -43,9 +68,13 @@
 
 	<div class="noticias">
 		<?php
-			$noticias = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias`");
+			$noticias = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias` WHERE titulo LIKE '%$busca%'");
             $noticias->execute();
             $noticias = $noticias->fetchAll();
+
+            //if($noticias->rowCount() == 0)
+            //	echo "bosta";
+            
     		foreach ($noticias as $key => $value) {
 		?>
 		<div class="noticia-single">

@@ -29,12 +29,13 @@ header{
 
 header.scroll{
  	height: 70px;
- 	float: right;
 }
 
 header h2{
 	color: white;
 	font-size: 40px;
+	text-align: left;
+	display: inline-block;
 	left: 2%;
 	position: absolute;
 	top: 50%;
@@ -45,72 +46,7 @@ header.scroll h2{
 	color: white;
 	display: block;
 	font-size: 30px;
-	left: 2%;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-header form{
-	text-align: right;
-	padding: 15px 10px;
-}
-
-header.scroll form{
-	text-align: left;
-	margin-left: 180px;
-}
-
-header input[type=text]{
-	max-width: 450px;
-	width: 50%;
-	height: 35px;
-	background-color: #204b8b;
-	border-radius: 20px;
-	border: 0;
-	margin-left: 40px;
-	padding-left: 15px;
-	font-size: 17px;
-}
-
-header.scroll input[type=text]{
-	max-width: 150px;
-	height: 35px;
-	background-color: #204b8b;
-	border-radius: 20px;
-	border: 0;
-	padding-left: 15px;
-	font-size: 17px;
-}
-
-header input[type=text]::placeholder{
-	color: #c9c9c9
-}
-
-header input[type=text]:focus{
-	border: 1px solid cyan;
-}
-
-button{
-	height: 35px;
-	position: relative;
-	left: -40px;
-	padding: 0 5px;
-	border: 0;
-	width: 25px;
-	cursor: pointer;
-	background-color: transparent;
-	color: white;
-	font-size: 15px;
-}
-
-header input:focus{
-	outline: none;
-}
-
-header.scroll nav{
-	float: none;
-	margin-top: -50px
+	
 }
 
 header nav.mobile{ 
@@ -188,15 +124,16 @@ header nav.desktop a:hover{
 	color: #adadad;
 }
 
-header.scroll .social{
-	display: none;
-}
-
 
 header .social{
 	display: block;
-	padding: 0 10px;
+	padding: 3px 10px;
+	margin-top: 65px;
 	text-align: right;
+}
+
+header.scroll .social{
+	margin-top: 0;
 }
 
 header .social a{
@@ -275,12 +212,18 @@ aside .contato-aside a{
 	text-decoration: none;
 }
 
+aside .categorias{
+	margin-bottom: 20px
+}
+
 aside .categorias h2{
 	color: white;
 	display: block;
 	padding: 10px 20px;
 	text-align: center;
 	background-color: #012b62;
+	font-size: 23px;
+	font-weight: normal;
 }
 
 aside .categorias select{
@@ -294,6 +237,31 @@ aside .categorias select{
 
 aside .categorias a:hover{
 	background-color: #012b62;
+}
+
+form.form-noticia{
+	text-align: right;
+	padding-top: 10px;
+}
+
+form.form-noticia input{
+	text-align: right;
+	padding-left: 10px;
+	text-align: left;
+	width: 270px;
+	height: 30px;
+	border-radius: 15px;
+	border: none;
+	outline: none;
+}
+
+form.form-noticia button{
+	width: 30px;
+	height: 30px;
+	margin-left: -40px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
 
 /**Conteúdo da página **/

@@ -24,11 +24,6 @@
 			<div class="logo">
 				<h2>Logomarca</h2>
 			</div><!--logo-->
-			
-				<form method="post">
-					<input type="text" name="busca" placeholder="Buscar...">
-					<button type="submit" name="acao"><i class="fas fa-search"></i></button>
-				</form>
 
 				<div class="social">
 					<a href=""><i class="fab fa-facebook-f"></i></a>
