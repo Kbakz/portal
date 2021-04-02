@@ -34,9 +34,12 @@
 						if($verificar == 0){
 							$slug = Painel::gerarSlug($titulo);
 							$imagem = Painel::uploadFile($imagem);
-							$sql = MySql::conectar()->prepare("INSERT INTO `$tabela` VALUES(null,?,?,?,?,?,?,?)");
+							$sql = MySql::conectar()->prepare("INSERT INTO `$tabela` VALUES(null,?,?,?,?,?,?,false,?)");
 							$sql->execute(array($categoriaId,$titulo,$conteudo,$imagem,$data,$autor,$slug));
 							Painel::alert('sucesso','Notícia cadastrada com sucesso');
+							header('location: '.INCLUDE_PATH_PAINEL.'postar-noticia?sucesso');
+							die();
+
 						}else{
 							Painel::alert('erro','Já existe uma notícia com esse nome');
 						}
@@ -47,6 +50,9 @@
 				}
 
 			}
+
+			if(isset($_GET['sucesso']) && !isset($_POST['acao']))
+				Painel::alert('sucesso','Cadastro realizado com sucesso');
 		?>
 		<label>Selecionar categoria:</label>
 		<select name="categoria_id">

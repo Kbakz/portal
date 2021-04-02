@@ -7,9 +7,11 @@
 		$selecionarImg = $selecionarImg->fetch();
 		Painel::deleteFile($selecionarImg['imagem']);
 		Painel::deletar($tabela,$idExcluir);
-		header('location:'.INCLUDE_PATH_PAINEL.'gerenciar-classificados');
+		header('location:'.INCLUDE_PATH_PAINEL.'noticias-cadastradas');
 		die();
 	}
+
+	
 
 	$paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 	$porPagina = 15;
