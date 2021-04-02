@@ -312,7 +312,7 @@ section.scroll{
 }
 
 .publi-single{
-	padding: 30px;
+	padding: 20px;
 	height: 150px;
 	margin: 5px;
 	background-color: #434343;
@@ -372,6 +372,7 @@ section.scroll{
 	width: 30%;
 	margin: 20px 1%;
 	background-color: white;
+	box-shadow: 3px 6px 15px -1px #ACACAC;
 }
 
 .capa-noticia img{
