@@ -13,7 +13,7 @@
 		<form>
 			<select id="cat" name="categoria">
 
-				<option selected>Todas as categorias</option>
+				<option selected value="">Todas as categorias</option>
 				<?php
 					$categorias = MySql::conectar()->prepare("SELECT * FROM `tb_admin.categoria` ORDER BY nome ASC");
 					$categorias->execute();
@@ -150,18 +150,21 @@
 					$query.= "ORDER BY $order";
 
 				}
-				echo $query;
-				$sql = MySql::conectar()->prepare($query);
+					$sql = MySql::conectar()->prepare($query);
 				$sql->execute();
 				$noticias = $sql->fetchAll();
-				
+				if(isset($_POST['busca'])){
+					$noticiasCount = count($noticias);
+					if($noticiasCount == 0)
+						echo "<h2>Nenhum resultado encontrado</h2>";
+					else
+						echo "<h2>Busca realizada com sucesso</h2>";
+				}
+
 			?>
 		</div><!--header-noticias-->
 		<div class="noticias-container">
 			<?php
-				//$noticias = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias` WHERE titulo LIKE '%$busca%'");
-	            //$noticias->execute();
-	            //$noticias = $noticias->fetchAll();
 	            
 	    		foreach ($noticias as $key => $value) {
 	    		$sql = MySql::conectar()->prepare("SELECT slug FROM `tb_admin.categoria` WHERE id = ?");
@@ -182,6 +185,24 @@
 				}
 			?>
 		</div><!--noticia-container-->	
+
+		<div class="paginacao">
+			<?php
+				$sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias`");
+				$sql->execute();
+				$sql = $sql->fetchAll();
+				$totalPaginas = ceil(count($sql) / $porPagina);
+
+				for($i = 1; $i <= $totalPaginas; $i++){
+					if($totalPaginas != 1){
+						if( $i == $pagina)
+							echo '<a class="selecionado" href="'.INCLUDE_PATH.'?pagina='.$i.'">'.$i.'</a>';
+						else
+							echo '<a href="'.INCLUDE_PATH.'?pagina='.$i.'">'.$i.'</a>';
+					}
+				}
+			?>
+		</div><!--paginacao-->
 	</div><!--noticias-->
 </div><!--box-content-->
 <?php }else{ 

@@ -387,6 +387,24 @@ section.scroll{
 	text-decoration: none;
 }
 
+.paginacao{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.paginacao a{
+	text-decoration: none;
+	padding: 5px;
+	background: #012B62;
+	color: white;
+	margin: 0 5px;
+	display: inline-block;
+}
+
+.paginacao a.selecionado{
+	background: #FF6E46;
+}
+
 /*pagina quem somos*/
 
 .info {
@@ -524,48 +542,53 @@ section.scroll{
 
 /*pagina classificados*/
 
-.form-classificado {
-	width: 100%;
-	padding: 20px;
-	background-color: white;
+form.form-classificados{
 	text-align: right;
+	padding: 10px;
 }
 
-.form-classificado input[type=text] {
-	width: 200px;
-	height: 30px;
-	margin-right: -10px;
+form.form-classificados input{
+	text-align: right;
 	padding-left: 10px;
-	border: none;
-	border-radius: 30px 0 0 30px;
-	outline: none;
-	background-color: #cccccc;
-	transition: 0.5s;
-}
-
-.form-classificado input[type=text]:focus {
-	width: 300px;
-}
-
-.form-classificado input[type=submit] {
+	text-align: left;
+	width: 270px;
 	height: 30px;
+	border-radius: 15px;
 	border: none;
-	padding: 0 10px;
-	border-radius: 0 30px 30px 0;
-	background-color: #ff6e46;
+	outline: none;
+}
+
+form.form-classificados button{
+	width: 30px;
+	height: 30px;
+	margin-left: -40px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
 
 .classificados {
 	width: 100%;
 	padding: 20px;
 	background-color: white;
+}
+
+.classificados-container{
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: row;
 	justify-content: center;
 }
 
+.classificados h2{
+	color: #303030;
+	text-align: center;
+	margin-top: 30px;
+	font-size: 30px;
+}
+
 .classificado-single {
-	width: 23%;
+	width: 20%;
 	margin: 20px 1%;
 	background-color: #204B8B;
 	box-shadow: 3px 6px 15px -1px #ACACAC;
@@ -745,17 +768,6 @@ section.scroll{
 		display: block;
 	}
 
-	aside{
-		display: none;
-	}
-
-	section.conteudo{
-		position: relative;
-		width: 100%;
-		top: 140px;
-		left: 0;
-	}
-
 	.classificado-single {
 		width: 48%;
 	}
@@ -795,7 +807,7 @@ section.scroll{
 
 @media screen and (max-width: 560px){
 	.apoiador-single {
-	width: 100%;
+		width: 100%;
 	}
 }
 
@@ -833,5 +845,17 @@ section.scroll{
 
 	.noticia-single{
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 360px){
+	aside{
+		left: -230px;
+		width: 230px;
+	}
+
+	aside > p{
+		left: 139px;
+		font-size: 20px;
 	}
 }

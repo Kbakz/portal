@@ -5,7 +5,7 @@
                 <h2>Conheça nossos apoiadores</h2>
             </div>
             <div class="apoiador-container">
-                <?php 
+                <?php
                     $apoiadores = MySql::conectar()->prepare("SELECT * FROM `tb_admin.apoiadores`");
                     $apoiadores->execute();
                     $apoiadores = $apoiadores->fetchAll();
@@ -15,7 +15,7 @@
                     <img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['imagem']?>">
                     <div class="apoiador-texto">
                         <p><?php echo $value['nome']?></p>
-                        <a href="http://<?php echo $value['link']?>"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="http://<?php echo $value['link']?>" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <?php }?>

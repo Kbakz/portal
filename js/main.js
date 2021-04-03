@@ -28,6 +28,7 @@ $(function(){
 			var aside = $('aside');
 			var offSet = aside.offset().left;
 			var icone = $('aside > p > i');
+			var widthSize = $(window).width();
 
 			if(offSet == -300){
 				aside.animate({'left':'0'});
@@ -39,7 +40,32 @@ $(function(){
 				icone.addClass('fa-angle-double-right');
 			}
 
-			
+			if(widthSize <= 360){
+					if(offSet == -230){
+						aside.stop().animate({'left':'0'});
+						icone.removeClass('fa-angle-double-right');
+						icone.addClass('fa-angle-double-left');
+					}else{
+						aside.stop().animate({'left':'-230px'});
+						icone.removeClass('fa-angle-double-left');
+						icone.addClass('fa-angle-double-right');
+					}
+				}
+
+			$(window).resize(function(){
+
+				if(widthSize <= 360){
+					if(offSet == -230){
+						aside.stop().animate({'left':'0'});
+						icone.removeClass('fa-angle-double-right');
+						icone.addClass('fa-angle-double-left');
+					}else{
+						aside.stop().animate({'left':'-230px'});
+						icone.removeClass('fa-angle-double-left');
+						icone.addClass('fa-angle-double-right');
+					}
+				}
+			})
 
 		})
 	}

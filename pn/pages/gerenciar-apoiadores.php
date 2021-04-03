@@ -11,6 +11,10 @@
 		header('location:'.INCLUDE_PATH_PAINEL.'gerenciar-apoiadores');
 		die();
 	}
+
+	$paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+	$porPagina = 15;
+	$query = ($paginaAtual - 1) * $porPagina;
 ?>
 <div class="conteudo-painel">
 	<h2>Apoiadores cadastrados</h2>
@@ -23,7 +27,7 @@
 				<th>#</th> 
 			</tr> 
 			<?php
-				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY nome"); 
+				$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` ORDER BY nome LIMIT $query,$porPagina"); 
 				$sql->execute(); 
 				$apoiadores = $sql->fetchAll();
 		
@@ -38,4 +42,22 @@
 			<?php }?>
 		</table>
 	</div><!--table-overflow-->
+
+	<div class="paginacao">
+		<?php
+			$sql = MySql::conectar()->prepare("SELECT * FROM `$tabela`");
+			$sql->execute();
+			$sql = $sql->fetchAll();
+			$totalPaginas = ceil(count($sql) / $porPagina);
+
+			for($i = 1; $i <= $totalPaginas; $i++){
+				if($totalPaginas != 1){
+					if( $i == $paginaAtual)
+						echo '<a class="selecionado" href="'.INCLUDE_PATH_PAINEL.'/gerenciar-apoiadores?pagina='.$i.'">'.$i.'</a>';
+					else
+						echo '<a href="'.INCLUDE_PATH_PAINEL.'/gerenciar-apoiadores?pagina='.$i.'">'.$i.'</a>';
+				}
+			}
+		?>
+	</div><!--paginacao-->
 </div><!--conteudo-painel-->
