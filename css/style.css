@@ -815,8 +815,8 @@ form.form-classificados button{
 }
 
 .conteudo-post img {
-	width: 100%;
-	max-width: 500px;
+	width: 500px;max-width: 80%;
+		height: auto;
 }
 
 

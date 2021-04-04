@@ -62,7 +62,7 @@
 						$sql = MySql::conectar()->prepare("UPDATE `$tabela` SET categoria_id = ?,titulo = ?,conteudo = ?, imagem = ?,slug = ? WHERE id = ?");
 						
 						if($sql->execute(array($categoria_id,$titulo,$conteudo,$imagem,$slug,$id))){
-							if($_POST['destaque'] == 'true'){
+							if(isset($_POST['destaque']) && $_POST['destaque'] == 'true'){
 								$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'true' WHERE id = ?");
 								$destaque->execute(array($id));
 								$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'false' WHERE id != ?");
