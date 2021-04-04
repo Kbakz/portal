@@ -18,7 +18,9 @@
 			if(isset($_POST['acao'])){
 				$categoria_id = $_POST['categoria_id'];
 				$titulo = $_POST['titulo'];
+				$lide = $_POST['lide'];
 				$conteudo = $_POST['conteudo'];
+				$fonte_imagem = $_POST['fonte-imagem'];
 				$imagem_atual = $_POST['imagem_atual'];
 				$imagem = $_FILES['imagem'];
 
@@ -33,9 +35,9 @@
 						$verificar->execute(array($titulo,$categoria_id,$id));
 						if($verificar->rowCount() == 0){
 							$slug = Painel::gerarSlug($titulo);
-							$sql = MySql::conectar()->prepare("UPDATE `$tabela` SET categoria_id = ?,titulo = ?,conteudo = ?, imagem = ?,slug = ? WHERE id = ?");
-							if($sql->execute(array($categoria_id,$titulo,$conteudo,$imagem,$slug,$id))){
-								if($_POST['destaque'] == 'true'){
+							$sql = MySql::conectar()->prepare("UPDATE `$tabela` SET categoria_id = ?,titulo = ?, lide = ?,conteudo = ?, imagem = ?,fonte = ?,slug = ? WHERE id = ?");
+							if($sql->execute(array($categoria_id,$titulo,$lide,$conteudo,$imagem,$fonte_imagem,$slug,$id))){
+								if(isset($_POST['destaque']) && $_POST['destaque'] == 'true'){
 									$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'true' WHERE id = ?");
 									$destaque->execute(array($id));
 									$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'false' WHERE id != ?");
@@ -59,9 +61,9 @@
 					$verificar = $verificar->rowCount();
 					if($verificar == 0){
 						$slug = Painel::gerarSlug($titulo);
-						$sql = MySql::conectar()->prepare("UPDATE `$tabela` SET categoria_id = ?,titulo = ?,conteudo = ?, imagem = ?,slug = ? WHERE id = ?");
+						$sql = MySql::conectar()->prepare("UPDATE `$tabela` SET categoria_id = ?,titulo = ?, lide = ?,conteudo = ?, imagem = ?,fonte = ?,slug = ? WHERE id = ?");
 						
-						if($sql->execute(array($categoria_id,$titulo,$conteudo,$imagem,$slug,$id))){
+						if($sql->execute(array($categoria_id,$titulo,$lide,$conteudo,$imagem,$fonte_imagem,$slug,$id))){
 							if(isset($_POST['destaque']) && $_POST['destaque'] == 'true'){
 								$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'true' WHERE id = ?");
 								$destaque->execute(array($id));
@@ -96,11 +98,15 @@
 		</select>
 		<label>Título:</label>
 		<input type="text" name="titulo" value="<?php echo $noticia['titulo'] ?>">
+		<label>Lide:</label>
+		<textarea style="height: 120px" name="lide"><?php echo $noticia['lide'] ?></textarea>
 		<label>Conteúdo:</label>
 		<textarea id="tinymce" name="conteudo"><?php echo $noticia['conteudo'] ?></textarea>
 		<label>Tornar notícia destaque:</label>
 		<input type="radio" name="destaque" value="true" id="destaque" <?php if($noticia['destaque'] == 'true') echo 'checked'?>>
 		<label for="destaque" class="destaque">Destaque</label>
+		<label>Fonte da imagem:</label>
+		<input type="text" name="fonte-imagem" value="<?php echo $noticia['fonte'] ?>">
 		<label>Imagem:</label>
 		<input type="file" name="imagem">
 		<input type="hidden" name="imagem_atual" value="<?php echo $noticia['imagem']?>">

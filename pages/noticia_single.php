@@ -23,16 +23,14 @@
     		<div class="titulo-site">
     			<h1><?php echo $post['titulo']; ?></h1>
     		</div>
-    		<p>
-    			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt in erat vitae tristique. Fusce ac sollicitudin nunc. Pellentesque molestie at nibh tincidunt auctor. Suspendisse lorem turpis.
-    		</p>
+    		<p><?php echo $post['lide']; ?></p>
     		<div class="post-autor">
     			<p>Por: <b><?php echo $post['autor']; ?></b><a href=""><i class="fas fa-share-alt"></i></a></p>
     			<data><?php echo date('d/m/Y',strtotime($post['data'])); ?></data>
     		</div>
     		<hr>
     		<img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $post['imagem']; ?>">
-    		<p>fonte: gol aviação</p>
+    		<p>fonte: <?php echo $post['fonte']; ?></p>
 
     		<article class="conteudo-post"><?php echo $post['conteudo']; ?></article>
     	</div>

@@ -85,7 +85,7 @@
 		</div><!--capa-destaque-->
 		<div class="conteudo-destaque">
 			<h1><?php echo $destaque['titulo']?></h1>
-			<p><?php echo substr($destaque['conteudo'],0,700)?>... </p>
+			<p><?php echo substr(strip_tags($destaque['conteudo']),0,700)?>... </p>
 			<a href="">Ver mais</a>
 		</div><!--conteudo-destaque-->
 	</div><!--noticia-destaque-->

@@ -13,7 +13,9 @@
 					$categoriaId = $_POST['categoria_id'];
 				}
 				$titulo = $_POST['titulo'];
+				$lide = $_POST['lide'];
 				$conteudo = $_POST['conteudo'];
+				$fonte_imagem = $_POST['fonte-imagem'];
 				$imagem = $_FILES['imagem'];
 				$data = $_POST['data'];
 				$autor = $_POST['autor'];
@@ -22,8 +24,12 @@
 					Painel::alert('erro','Adicione ou crie uma categoria');
 				}else if($titulo == ''){
 					Painel::alert('erro','Adicione um título');
+				}else if($lide == ''){
+					Painel::alert('erro','Adicione um lide');
 				}else if($conteudo == ''){
 					Painel::alert('erro','Adicione o conteudo');
+				}else if($fonte_imagem == ''){
+					Painel::alert('erro','Adicione a fonte da imagem');
 				}else if($imagem['tmp_name'] == ''){
 					Painel::alert('erro','Selecione uma imagem');
 				}else{
@@ -34,8 +40,8 @@
 						if($verificar == 0){
 							$slug = Painel::gerarSlug($titulo);
 							$imagem = Painel::uploadFile($imagem);
-							$sql = MySql::conectar()->prepare("INSERT INTO `$tabela` VALUES(null,?,?,?,?,?,?,false,?)");
-							$sql->execute(array($categoriaId,$titulo,$conteudo,$imagem,$data,$autor,$slug));
+							$sql = MySql::conectar()->prepare("INSERT INTO `$tabela` VALUES(null,?,?,?,?,?,?,?,?,false,?)");
+							$sql->execute(array($categoriaId,$titulo,$lide,$conteudo,$imagem,$fonte_imagem,$data,$autor,$slug));
 							Painel::alert('sucesso','Notícia cadastrada com sucesso');
 							header('location: '.INCLUDE_PATH_PAINEL.'postar-noticia?sucesso');
 							die();
@@ -70,8 +76,13 @@
 		</select>
 		<label>Título</label>
 		<input type="text" name="titulo" value="<?php Painel::recover('titulo')?>">
+		<label>Lide</label>
+		<textarea style="height: 120px" name="lide"><?php Painel::recover('lide')?></textarea>
 		<label>Conteúdo:</label>
 		<textarea id="tinymce" name="conteudo"><?php Painel::recover('conteudo')?></textarea>
+
+		<label>Fonte da imagem:</label>
+		<input type="text" name="fonte-imagem" value="<?php Painel::recover('fonte-imagem')?>">
 		<label>Imagem:</label>
 		<input type="file" name="imagem">
 
