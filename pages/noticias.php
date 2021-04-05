@@ -74,21 +74,33 @@
 		</div><!--publi-single-->
 	</div><!--publicidades-->
 
-	<div class="noticia-destaque">
+	
 		<?php
+		if(!isset($_POST['busca']) && !$categoria){
 			$destaque = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias` WHERE destaque = 'true'");
             $destaque->execute();
             $destaque = $destaque->fetch();
+            if(!$destaque){
+            	$destaque = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias` ORDER BY id DESC LIMIT 1");
+            	$destaque->execute();
+            	$destaque = $destaque->fetch();
+            }
+            $sql = MySql::conectar()->prepare("SELECT slug FROM `tb_admin.categoria` WHERE id = ?");
+	    	$sql->execute(array($destaque['categoria_id']));
+			$categoriaNome = $sql->fetch()['slug'];
 		?>
-		<div class="capa-destaque">
-			<img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $destaque['imagem']?>">
-		</div><!--capa-destaque-->
-		<div class="conteudo-destaque">
-			<h1><?php echo $destaque['titulo']?></h1>
-			<p><?php echo substr(strip_tags($destaque['lide']),0,700)?>... </p>
-			<a href="">Ver mais</a>
-		</div><!--conteudo-destaque-->
-	</div><!--noticia-destaque-->
+		<div class="noticia-destaque">
+			<div class="capa-destaque">
+				<img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $destaque['imagem']?>">
+			</div><!--capa-destaque-->
+			<div class="conteudo-destaque">
+				<h1><?php echo $destaque['titulo']?></h1>
+				<p><?php echo substr(strip_tags($destaque['lide']),0,700)?>... </p>
+				<a href="<?php INCLUDE_PATH;?><?php echo $categoriaNome; ?>/<?php echo $destaque['slug']; ?>">Ver mais</a>
+			</div><!--conteudo-destaque-->
+		</div><!--noticia-destaque-->
+		<?php } ?>
+
 
 	<div class="noticias">
 		<div class="header-noticias">
@@ -156,9 +168,11 @@
 				if(isset($_POST['busca'])){
 					$noticiasCount = count($noticias);
 					if($noticiasCount == 0)
-						echo "<h2>Nenhum resultado encontrado</h2>";
+						echo '<h2><i class="fas fa-exclamation-triangle"></i> Nenhum resultado encontrado</h2>';
+					else if($noticiasCount == 1)
+						echo '<h2><i class="fas fa-check-circle"></i> Busca por <span>'.$_POST['busca'] .'</span> ('.$noticiasCount.' resultado encontrado)</h2>';
 					else
-						echo "<h2>Busca realizada com sucesso</h2>";
+						echo '<h2><i class="fas fa-check-circle"></i> Busca por <span>'.$_POST['busca'] .'</span> ('.$noticiasCount.' resultados encontrados)</h2>';
 				}
 
 			?>

@@ -58,7 +58,7 @@
 				foreach ($noticias as $key => $value) {
 					$nomeCategoria = Painel::selecionar('tb_admin.categoria','id',$value['categoria_id'])['nome'];
 			?>
-			<tr>
+			<tr <?php if($value['destaque'] == 'true') echo 'style="background: #a9f9a4;"';?>>
 				<td><?php echo $value['titulo']?></td>
 				<td><img src="<?php echo INCLUDE_PATH_PAINEL.'uploads/'.$value['imagem']?>"></td>
 				<td><?php echo $nomeCategoria?></td>
