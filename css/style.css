@@ -21,32 +21,21 @@ body{
 
 header{
 	width: 100%;
-	height: 140px;
+	height: 70px;
 	background: #012b62;
 	z-index: 2;
 	position: fixed;
 }
 
-header.scroll{
- 	height: 70px;
-}
-
 header h2{
 	color: white;
-	font-size: 40px;
+	font-size: 30px;
 	text-align: left;
-	display: inline-block;
+	display: block;
 	left: 2%;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-}
-
-header.scroll h2{
-	color: white;
-	display: block;
-	font-size: 30px;
-	
 }
 
 header nav.mobile{ 
@@ -61,13 +50,9 @@ header nav.mobile span{
 	cursor: pointer;
 }
 
-header.scroll nav.mobile ul{
-	top: 70px;
-}
-
 header nav.mobile ul{
 	position: absolute;
-	top: 140px;
+	top: 70px;
 	left: 0;
 	width: 100%;
 	z-index: 3;
@@ -128,12 +113,8 @@ header nav.desktop a:hover{
 header .social{
 	display: block;
 	padding: 3px 10px;
-	margin-top: 65px;
+	margin-top: 0px;
 	text-align: right;
-}
-
-header.scroll .social{
-	margin-top: 0;
 }
 
 header .social a{
@@ -147,7 +128,7 @@ header .social a:hover{
 
 footer{
 	position: relative;
-	top: 140px;
+	top: 70px;
 	background-color: #012B62;
 	text-align: center;
 	color: white;
@@ -155,26 +136,17 @@ footer{
 	font-size: 16px;
 }
 
-footer.scroll{
-	top: 70px;
-}
-
 aside{
 	position: fixed;
 	left: -300px;
-	top: 140px;
+	top: 70px;
 	width: 300px;
-	height: calc(100vh - 140px);
+	height: calc(100vh - 70px);
 	background-color: rgba(170, 170, 170, 0.801);
 	backdrop-filter: blur(5px);
 	padding: 20px 30px;
 	text-align: center;
 	z-index: 1;
-}
-
-aside.scroll{
-	top: 70px;
-	height: calc(100vh - 70px);
 }
 
 aside > p{
@@ -268,10 +240,6 @@ form.form-noticia button{
 section.conteudo{
 	position: relative;
 	width: 100%;
-	top: 140px;
-}
-
-section.scroll{
 	top: 70px;
 }
 
@@ -538,7 +506,7 @@ section.scroll{
 	background-color: #ff6e46;
 	border: none;
 	border-radius: 30px;
-	color: #012b62;
+	color: #fff;
 	font-size: 16px;
 	margin-top: 10px;
 	font-size: 20px;
@@ -636,7 +604,7 @@ form.form-classificados button{
 
 .classificado-texto a {
 	padding: 10px 20px;
-	color: #012b62;
+	color: #fff;
 	background-color: #ff6e46;
 	border-radius: 30px;
 	margin-top: 10px;
@@ -676,7 +644,7 @@ form.form-classificados button{
 	margin-bottom: 20px;
 	padding: 10px 50px;
 	font-size: 20px;
-	color: #012B62;
+	color: #fff;
 	text-align: center;
 	background-color: #ff6e46;
 	border-radius: 30px;
@@ -754,7 +722,7 @@ form.form-classificados button{
 	background-color: #ff6e46;
 	border: none;
 	border-radius: 30px;
-	color: #012b62;
+	color: #fff;
 	font-size: 16px;
 	margin-top: 10px;
 	font-size: 20px;
@@ -764,10 +732,15 @@ form.form-classificados button{
 /*post*/
 
 .post {
-	width: 100%;
-	padding: 20px 100px;
+	width: 75%;
+	padding: 20px 4%;
 	color: #646464;
 	background-color: white;
+}
+
+.post-colum {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .post p {
@@ -822,9 +795,56 @@ form.form-classificados button{
 
 .conteudo-post img {
 	width: 500px;max-width: 80%;
-		height: auto;
+	height: auto;
 }
 
+.relacionadas {
+	width: 25%;
+	padding: 20px 10px;
+	color: #646464;
+	background-color: #dbdbdb;
+}
+
+.relacionadas p {
+	font-size: 20px;
+	padding: 5px;
+	color: #303030;
+}
+
+.relacionadas-single {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px 0;
+	border-bottom: 1px solid #bfbfbf;
+}
+
+.relacionadas-single img {
+	width: 120px;
+	max-width: 40%;
+	height: 80px;
+	object-fit: cover;
+}
+
+.relacionadas-titulo {
+	width: 60%;
+	padding: 10px;
+}
+
+.relacionadas-titulo h3 {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+.relacionadas-titulo a {
+	padding: 5px 10px;
+	text-decoration: none;
+	background-color: #ff6e46;
+	border: none;
+	border-radius: 30px;
+	color: #fff;
+	font-size: 13px;
+	cursor: pointer;
+}
 
 @media screen and (max-width: 1024px){
 	header.scroll form{
@@ -842,6 +862,12 @@ form.form-classificados button{
 	.classificado-single {
 		width: 48%;
 	}
+	.post {
+	width: 100%;
+}
+	.relacionadas {
+	width: 100%;
+}
 }
 
 @media screen and (max-width: 850px){
