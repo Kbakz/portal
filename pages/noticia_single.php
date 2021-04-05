@@ -19,20 +19,36 @@
 ?>
 <div class="box-content">
     <div class="center">
-    	<div class="post">
-    		<div class="titulo-site">
-    			<h1><?php echo $post['titulo']; ?></h1>
-    		</div>
-    		<p><?php echo $post['lide']; ?></p>
-    		<div class="post-autor">
-    			<p>Por: <b><?php echo $post['autor']; ?></b><a href=""><i class="fas fa-share-alt"></i></a></p>
-    			<data><?php echo date('d/m/Y',strtotime($post['data'])); ?></data>
-    		</div>
-    		<hr>
-    		<img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $post['imagem']; ?>">
-    		<p>fonte: <?php echo $post['fonte']; ?></p>
+        <div class="post-colum">
+            <div class="post">
+                <div class="titulo-site">
+                    <h1><?php echo $post['titulo']; ?></h1>
+                </div>
+                <p><?php echo $post['lide']; ?></p>
+                <div class="post-autor">
+                    <p>Por: <b><?php echo $post['autor']; ?></b><a href=""><i class="fas fa-share-alt"></i></a></p>
+                    <data><?php echo date('d/m/Y',strtotime($post['data'])); ?></data>
+                </div>
+                <hr>
+                <img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $post['imagem']; ?>">
+                <p>fonte: <?php echo $post['fonte']; ?></p>
 
-    		<article class="conteudo-post"><?php echo $post['conteudo']; ?></article>
-    	</div>
+                <article class="conteudo-post"><?php echo $post['conteudo']; ?></article>
+            </div>
+            <div class="relacionadas">
+                <p>Mais...</p>
+                <?php 
+                    for ($i=0; $i < 5; $i++) { 
+                ?>
+                <div class="relacionadas-single">
+                    <div>
+                        
+                    </div>
+                    <img src="">
+                    <h3>Titulo</h3>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
     </div>
 </div><!--box-content-->
