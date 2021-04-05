@@ -42,6 +42,9 @@
 									$destaque->execute(array($id));
 									$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'false' WHERE id != ?");
 									$destaque->execute(array($id));
+								}else{
+									$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'false' WHERE id = ?");
+									$destaque->execute(array($id));
 								}
 								Painel::alert('sucesso','Notícia atualizada com sucesso');
 								$noticia = Painel::selecionar($tabela,'id',$id);
@@ -68,6 +71,9 @@
 								$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'true' WHERE id = ?");
 								$destaque->execute(array($id));
 								$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'false' WHERE id != ?");
+								$destaque->execute(array($id));
+							}else{
+								$destaque = $sql = MySql::conectar()->prepare("UPDATE `$tabela` SET destaque = 'false' WHERE id = ?");
 								$destaque->execute(array($id));
 							}
 							Painel::alert('sucesso','Notícia atualizada com sucesso');
@@ -103,7 +109,7 @@
 		<label>Conteúdo:</label>
 		<textarea id="tinymce" name="conteudo"><?php echo $noticia['conteudo'] ?></textarea>
 		<label>Tornar notícia destaque:</label>
-		<input type="radio" name="destaque" value="true" id="destaque" <?php if($noticia['destaque'] == 'true') echo 'checked'?>>
+		<input type="checkbox" name="destaque" value="true" id="destaque" <?php if($noticia['destaque'] == 'true') echo 'checked'?>>
 		<label for="destaque" class="destaque">Destaque</label>
 		<label>Fonte da imagem:</label>
 		<input type="text" name="fonte-imagem" value="<?php echo $noticia['fonte'] ?>">

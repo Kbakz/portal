@@ -381,7 +381,7 @@ table a.order{ background: #204B8B}
 	border-radius: 20px;
 }
 
-.conteudo-painel input[type=radio]{
+.conteudo-painel input[type=checkbox]{
 	outline: 0;
 	width: 20px;
 	height: 20px;

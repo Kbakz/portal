@@ -4,7 +4,7 @@
     $verifica_categoria->execute(array($url[0]));
 
     if ($verifica_categoria->rowCount() == 0){
-        Painel::redirect(INCLUDE_PATH.'noticias');
+       header('location: '.INCLUDE_PATH);
     }
 
     $categoria_info = $verifica_categoria->fetch();
@@ -14,7 +14,6 @@
     if($post->rowCount() == 0){
         header('location: '.INCLUDE_PATH);
     }
-
     $post = $post->fetch();
 ?>
 <div class="box-content">
@@ -38,13 +37,15 @@
             <div class="relacionadas">
                 <p>Mais notícias</p>
                 <?php 
-                    for ($i=0; $i < 5; $i++) { 
+                    $postRelacionados = MySql::conectar()->prepare("SELECT * FROM `tb_admin.noticias` WHERE slug != ? AND categoria_id = ? ORDER BY id DESC LIMIT 5");
+                    $postRelacionados->execute(array($url[1],$categoria_info['id']));
+                    foreach ($postRelacionados as $key => $value) {
                 ?>
                 <div class="relacionadas-single">
-                    <img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/6066386385f9e.jpeg">
+                    <img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['imagem'] ?>">
                     <div class="relacionadas-titulo">
-                        <h3>Titulo</h3>
-                        <a href="">Ver mais</a>
+                        <h3><?php echo $value['titulo'] ?></h3>
+                        <a href="<?php echo INCLUDE_PATH; echo $categoria_info['slug']; ?>/<?php echo $value['slug']; ?>">Ver mais</a>
                     </div>
                 </div>
                 <?php } ?>

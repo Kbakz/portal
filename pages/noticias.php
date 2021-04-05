@@ -96,7 +96,7 @@
 			<div class="conteudo-destaque">
 				<h1><?php echo $destaque['titulo']?></h1>
 				<p><?php echo substr(strip_tags($destaque['lide']),0,700)?>... </p>
-				<a href="<?php INCLUDE_PATH;?><?php echo $categoriaNome; ?>/<?php echo $destaque['slug']; ?>">Ver mais</a>
+				<a href="<?php echo INCLUDE_PATH;?><?php echo $categoriaNome; ?>/<?php echo $destaque['slug']; ?>">Ver mais</a>
 			</div><!--conteudo-destaque-->
 		</div><!--noticia-destaque-->
 		<?php } ?>
@@ -192,7 +192,7 @@
 				<div class="conteudo-noticia">
 					<h3><?php echo $value['titulo']?></h3>
 					<p><?php echo substr(strip_tags($value['lide']),0,200)?>...</p>
-					<a href="<?php INCLUDE_PATH;?><?php echo $categoriaNome; ?>/<?php echo $value['slug']; ?>">Ver mais</a>
+					<a href="<?php echo INCLUDE_PATH;?><?php echo $categoriaNome; ?>/<?php echo $value['slug']; ?>">Ver mais</a>
 				</div><!--conteudo-noticia-->
 			</div><!--noticia-single-->
 			<?php
