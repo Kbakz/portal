@@ -36,16 +36,16 @@
                 <article class="conteudo-post"><?php echo $post['conteudo']; ?></article>
             </div>
             <div class="relacionadas">
-                <p>Mais...</p>
+                <p>Mais notícias</p>
                 <?php 
                     for ($i=0; $i < 5; $i++) { 
                 ?>
                 <div class="relacionadas-single">
-                    <div>
-                        
+                    <img src="<?php echo INCLUDE_PATH_PAINEL?>uploads/6066386385f9e.jpeg">
+                    <div class="relacionadas-titulo">
+                        <h3>Titulo</h3>
+                        <a href="">Ver mais</a>
                     </div>
-                    <img src="">
-                    <h3>Titulo</h3>
                 </div>
                 <?php } ?>
             </div>
