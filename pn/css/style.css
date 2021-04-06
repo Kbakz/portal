@@ -369,6 +369,11 @@ table a.order{ background: #204B8B}
 	margin: 20px 0px 5px 15px;
 	color: #646464;
 }
+span.contador{
+	display: block;
+	font-size: 18px;
+	color: #646464;
+}
 
 .conteudo-painel input:not([type="submit"]){
 	outline: 0;
@@ -403,7 +408,7 @@ table a.order{ background: #204B8B}
 .conteudo-painel textarea{
 	outline: 0;
 	width: 100%;
-	height: 500px;
+	height: 300px;
 	min-height: 40px;
 	resize: vertical;
 	color: #303030;
@@ -411,6 +416,10 @@ table a.order{ background: #204B8B}
 	padding-left: 15px;
 	padding-top: 15px;
 	border-radius: 10px;
+}
+
+.conteudo-painel textarea#tinymce{
+	height: 500px;
 }
 
 .conteudo-painel select{

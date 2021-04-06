@@ -20,8 +20,10 @@
 				$social_3 = $_POST['link3'];
 				$imagem_atual = $_POST['imagem_atual'];
 				$imagem = $_FILES['imagem'];
-				
-				if($imagem['name'] != ''){
+
+				if(strlen($descricao) > 600){
+					Painel::alert('erro','Você atingiu o limite de caracteres');
+				}else if($imagem['name'] != ''){
 					if(Painel::imagemValida($imagem)){
 						Painel::deleteFile($imagem_atual);
 						$imagem = Painel::uploadFile($imagem);
@@ -29,8 +31,8 @@
 						$sql->execute(array($imagem,$descricao,$icone1,$social_1,$icone2,$social_2,$icone3,$social_3));
 						Painel::alert('sucesso','Página atualizada com sucesso');
 						$info = MySql::conectar()->prepare("SELECT * FROM `$tabela`");
-	$info->execute();
-	$info = $info->fetch();
+						$info->execute();
+						$info = $info->fetch();
 					}else{
 						Painel::alert('erro','Formato de imagem invalido');
 					}
@@ -40,14 +42,15 @@
 					$sql->execute(array($imagem,$descricao,$icone1,$social_1,$icone2,$social_2,$icone3,$social_3));
 					Painel::alert('sucesso','Página atualizada com sucesso');
 					$info = MySql::conectar()->prepare("SELECT * FROM `$tabela`");
-	$info->execute();
-	$info = $info->fetch();
+					$info->execute();
+					$info = $info->fetch();
 				}
 			}
 		?>
 
 		<label>Descrição:</label>
-		<textarea name="descricao"><?php echo $info['texto_sobre']?></textarea>
+		<textarea id="limitar" name="descricao"><?php echo $info['texto_sobre']?></textarea>
+		<span class="contador"></span>
 		<label>Icone 1:</label>
 		<input type="text" name="icone1" value="<?php echo $info['icone1']?>">
 		<label>link 1:</label>

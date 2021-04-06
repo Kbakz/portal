@@ -11,7 +11,7 @@
     			<div class="logo">
                     <img src="<?php echo INCLUDE_PATH_PAINEL?>/uploads/<?php echo $sobre['img_sobre'];?>">         
                 </div>
-    			<p><?php echo substr($sobre['texto_sobre'],0,600);?>...</p>
+    			<p><?php echo substr($sobre['texto_sobre'],0,600);?></p>
     		</div>
     	</div>
     	<div class="midia">

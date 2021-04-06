@@ -32,14 +32,14 @@
 		<form id="form-ordem" method="post">
 			<select id="ordem" name="ordem">
 				<?php
-				$order = 'data';
+				$order = 'data DESC';
 				if(isset($_POST['ordem'])){
 					$order = $_POST['ordem'];
 				}
 			?>
 				<option selected disabled>ordenar notícias</option>
-				<option <?php if($order == 'data') echo "selected";?> value="data">Data (Mais recente)</option>
-				<option <?php if($order == 'data DESC') echo "selected";?> value="data DESC">Data (Mais antigo)</option>
+				<option <?php if($order == 'data DESC') echo "selected";?> value="data DESC">Data (Mais recente)</option>
+				<option <?php if($order == 'data') echo "selected";?> value="data">Data (Mais antigo)</option>
 				<option <?php if($order == 'titulo') echo "selected";?> value="titulo">titulo (A - Z)</option>
 				<option <?php if($order == 'titulo DESC') echo "selected";?> value="titulo DESC">titulo (Z - A)</option>
 			</select>
@@ -95,7 +95,7 @@
 			</div><!--capa-destaque-->
 			<div class="conteudo-destaque">
 				<h1><?php echo $destaque['titulo']?></h1>
-				<p><?php echo substr(strip_tags($destaque['lide']),0,700)?>... </p>
+				<p><?php echo substr(strip_tags($destaque['lide']),0,700); if(strlen($destaque['lide']) > 700) echo '...';?></p>
 				<a href="<?php echo INCLUDE_PATH;?><?php echo $categoriaNome; ?>/<?php echo $destaque['slug']; ?>">Ver mais</a>
 			</div><!--conteudo-destaque-->
 		</div><!--noticia-destaque-->
@@ -191,7 +191,7 @@
 				</div><!--capa-noticia-->
 				<div class="conteudo-noticia">
 					<h3><?php echo $value['titulo']?></h3>
-					<p><?php echo substr(strip_tags($value['lide']),0,200)?>...</p>
+					<p><?php echo substr(strip_tags($value['lide']),0,200); if(strlen($value['lide']) > 200) echo '...'; ?></p>
 					<a href="<?php echo INCLUDE_PATH;?><?php echo $categoriaNome; ?>/<?php echo $value['slug']; ?>">Ver mais</a>
 				</div><!--conteudo-noticia-->
 			</div><!--noticia-single-->

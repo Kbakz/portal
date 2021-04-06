@@ -893,16 +893,16 @@ form.form-classificados button{
 }
 
 @media screen and (max-width: 700px){
-	.noticia-single{
-		width: 50%;
-	}
-
 	.classificado-single {
 		width: 100%;
 	}
 }
 
 @media screen and (max-width: 560px){
+	.noticia-single{
+		width: 100%;
+	}
+	
 	.apoiador-single {
 		width: 100%;
 	}
@@ -938,10 +938,6 @@ form.form-classificados button{
 
 	header.scroll input[type=text]::placeholder{
 		font-size: 16px;
-	}
-
-	.noticia-single{
-		width: 100%;
 	}
 }
 

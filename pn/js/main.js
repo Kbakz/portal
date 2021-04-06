@@ -1,5 +1,14 @@
 $(function(){
 	fecharMenu();
+	limitarCaracter();
+
+	tinymce.init({
+        selector: '#tinymce',
+        plugins: 'image imagetools emoticons'
+      });
+
+	 $('.horario').mask('00:00');
+	 $('.telefone').mask('(00) 00000-0000');
 
 	function fecharMenu(){
 		$('p.btn-menu').click(function(){
@@ -25,11 +34,29 @@ $(function(){
 		
 	}
 
-	 tinymce.init({
-        selector: '#tinymce',
-        plugins: 'image imagetools emoticons'
-      });
-
-	 $('.horario').mask('00:00');
-	 $('.telefone').mask('(00) 00000-0000');
+	function limitarCaracter(){
+		var campo = $('#limitar');
+		var contador = $('span.contador');
+		var campoValor = campo.val();
+		var quant = campoValor.length;
+		var limite = 600;
+		contador.html('<span>'+quant+'/'+limite+'</span>');
+		campo.keyup(function(){
+			campoValor = campo.val();
+			quant = campoValor.length;
+			contador.html('<span>'+quant+'/'+limite+'</span>');
+			if(quant >= limite){
+				contador.css('color' , 'red');
+				campo.keypress(function(){
+					if(quant >= limite)
+						return false;
+					else
+						return true;
+				})
+			}else{
+				contador.css('color' , '#646464');
+			}
+		})
+		
+	}
 })
