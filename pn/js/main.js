@@ -1,14 +1,6 @@
 $(function(){
 	fecharMenu();
-	limitarCaracter();
-
-	tinymce.init({
-        selector: '#tinymce',
-        plugins: 'image imagetools emoticons'
-      });
-
-	 $('.horario').mask('00:00');
-	 $('.telefone').mask('(00) 00000-0000');
+	//limitarCaracter();
 
 	function fecharMenu(){
 		$('p.btn-menu').click(function(){
@@ -41,6 +33,7 @@ $(function(){
 		var quant = campoValor.length;
 		var limite = 600;
 		contador.html('<span>'+quant+'/'+limite+'</span>');
+		quant = campoValor.length;
 		campo.keyup(function(){
 			campoValor = campo.val();
 			quant = campoValor.length;
@@ -59,4 +52,12 @@ $(function(){
 		})
 		
 	}
+
+	tinymce.init({
+        selector: '#tinymce',
+        plugins: 'image imagetools emoticons'
+      });
+
+	 $('.horario').mask('00:00');
+	 $('.telefone').mask('(00) 00000-0000');
 })

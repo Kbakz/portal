@@ -101,9 +101,9 @@
 		<p>&copy2021 - Todos os direitos reservados</p>
 	</footer>
 
-	<script src="<?php echo INCLUDE_PATH?>js/jquery.js" defer></script>
-	<script src="<?php echo INCLUDE_PATH?>js/constants.js" defer></script>
+	<script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
+	<script src="<?php echo INCLUDE_PATH?>js/constants.js"></script>
 	<script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
-	<script src="<?php echo INCLUDE_PATH?>js/main.js" defer></script>
+	<script src="<?php echo INCLUDE_PATH?>js/main.js"></script>
 </body>
 </html>
