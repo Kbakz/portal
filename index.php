@@ -56,7 +56,6 @@
 			<div class="logo">
 				<h2>Logomarca</h2>
 			</div><!--logo-->
-
 				<div class="social">
 					<a href="http://<?php echo $sobre['social_1']?>"><i class="<?php echo $sobre['icone1']?>"></i></a>
 					<a href="http://<?php echo $sobre['social_2']?>"><i class="<?php echo $sobre['icone2']?>"></i></a>
