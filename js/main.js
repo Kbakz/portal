@@ -83,7 +83,7 @@ $(function(){
         $('form.ajax').ajaxForm({
              success:function(){
              	alert('teste');         
-                $('form.ajax')[0].reset();
+                //$('form.ajax')[0].reset();
             }
         });
 	}

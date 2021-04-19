@@ -1,28 +1,42 @@
 <?php
 	session_start();
 	date_default_timezone_set('America/Sao_Paulo');
-	
+	/*
 	$autoload = function($class){
 		if($class == 'Email'){
 			require_once('classes/phpmailer/PHPMailerAutoload.php');
 		}
 
 		include('classes/'.$class.'.php');
+		
 	};
-	spl_autoload_extensions('.php');
+	
 	spl_autoload_register($autoload);
+	*/
+
+	 function MyAutoload($class){
+		if($class == 'Email'){
+			require_once('classes/phpmailer/PHPMailerAutoload.php');
+		}
+
+		include('classes/'.$class.'.php');
+	};
+
+	spl_autoload_register('MyAutoload');
 
 	//local
+	///*
 	define('INCLUDE_PATH', 'http://localhost/Portal/');
 
 	define('HOST', 'localhost');
 	define('DATABASE', 'portal');
 	define('USUARIO', 'root');
 	define('SENHA', '');
+	//*/
 	
 	//Servidor
 	/*
-	define('INCLUDE_PATH', 'https://portfoliokevinfreire.com/');
+	define('INCLUDE_PATH', 'http://portal.portfoliokevinfreire.com/');
 
 	define('HOST', 'localhost');
 	define('DATABASE', 'portif49_portal');

@@ -103,6 +103,7 @@
 
 	<script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
 	<script src="<?php echo INCLUDE_PATH?>js/constants.js"></script>
+	<script src="<?php echo INCLUDE_PATH?>js/form.js"></script>
 	<script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
 	<script src="<?php echo INCLUDE_PATH?>js/main.js"></script>
 </body>
