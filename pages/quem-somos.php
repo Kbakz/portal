@@ -34,13 +34,14 @@
     		<div class="titulo-site">
     			<h2>Tire suas dúvidas</h2>
     		</div>
-	    	<form>
+	    	<form class="ajax" method="post">
 	    		<label for="nome">Nome:</label>
 	    		<input type="text" name="nome" id="nome">
 	    		<label for="email">E-mail:</label>
 	    		<input type="email" name="email" id="email">
 	    		<label for="mensagem">Mensagem:</label>
 	    		<textarea name="mensagem" id="mensagem"></textarea>
+                <input type="hidden" name="identificador" value="tirar_duvidas">
 	    		<input type="submit" name="enviar" value="Enviar">
 	    	</form>
     	</div>

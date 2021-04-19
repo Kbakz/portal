@@ -26,7 +26,7 @@
                 <h2>Faça parte dos nossos apoiadores</h2>
             </div>
             <p>Preencha o formulario abaixo</p>
-            <form>
+            <form class="ajax" method="post" action="<?php echo INCLUDE_PATH ?>formulario.php">
                 <label for="nome">Nome da empresa ou do seu negocio:</label>
                 <input type="text" name="nome" placeholder="ex:minha empresa" id="nome">
                 <label for="email">E-mail para contato:</label>
@@ -35,6 +35,7 @@
                 <input type="url" name="link" placeholder="ex:https://empresa.com/exemplo" id="link">
                 <label for="mensagem">Mande sua mensagem:</label>
                 <textarea placeholder="ex:gostaria de fazer parte dos apoiadores..." id="mensagem"></textarea>
+                <input type="hidden" name="identificador" value="Novo_apoiador">
                 <input type="submit">
             </form>
         </div>
