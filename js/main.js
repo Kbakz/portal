@@ -1,7 +1,7 @@
 $(function(){
 	srollMenu();
 	ocultarSidebar();
-	enviarForm();
+	//enviarForm();
 
 	function srollMenu(){
 		$(window).scroll(function(){
@@ -79,6 +79,7 @@ $(function(){
 		$('form#form-ordem').submit();
 	});
 
+	/*
 	function enviarForm(){
         $('form.ajax').ajaxForm({
              success:function(){
@@ -87,5 +88,6 @@ $(function(){
             }
         });
 	}
+	*/
 	
 })

@@ -20,33 +20,33 @@
 	<meta property="og:site_name" content="">
 	<meta property="og:description" content="">
 	<meta property="og:url" content="<?php echo INCLUDE_PATH?>">
-	<meta property="og:image" content="">
-	<meta property="og:image:type" content="">
+	<!--<meta property="og:image" content="">
+	<meta property="og:image:type" content="">-->
 
 	<link rel="preload" as="style" href="<?php echo INCLUDE_PATH?>css/style.css">
-	<link rel="preload" as="image" href="">
+	<!--<link rel="preload" as="image" href="">-->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>css/style.css">
 
 	<title>
-	<?php
-		if($url == 'noticias')
-			echo ucfirst('Portal de noticias');
-		else if($url == 'quem-somos')
-			echo ucfirst('quem somos');
-		else if($url == 'classificados')
-			echo ucfirst($url);
-		else if($url == 'apoiadores')
-			echo ucfirst($url);
-		else{
-			$noticiaUrl = explode('/', $url);
-			if(isset($noticiaUrl[1]))
-				echo ucfirst($noticiaUrl[1]);
-			else
+		<?php
+			if($url == 'noticias')
 				echo ucfirst('Portal de noticias');
-		}
-	?>
+			else if($url == 'quem-somos')
+				echo ucfirst('quem somos');
+			else if($url == 'classificados')
+				echo ucfirst($url);
+			else if($url == 'apoiadores')
+				echo ucfirst($url);
+			else{
+				$noticiaUrl = explode('/', $url);
+				if(isset($noticiaUrl[1]))
+					echo ucfirst($noticiaUrl[1]);
+				else
+					echo ucfirst('Portal de noticias');
+			}
+		?>
 	 </title>
 </head>
 <body>
@@ -103,7 +103,7 @@
 
 	<script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
 	<script src="<?php echo INCLUDE_PATH?>js/constants.js"></script>
-	<script src="<?php echo INCLUDE_PATH?>js/form.js"></script>
+	<script src="<?php echo INCLUDE_PATH?>js/formulario.js"></script>
 	<script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
 	<script src="<?php echo INCLUDE_PATH?>js/main.js"></script>
 </body>

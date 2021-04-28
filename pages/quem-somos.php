@@ -1,6 +1,3 @@
-<?php
-    
-?>
 <div class="box-content">
     <div class="center">
     	<div class="info">
@@ -13,7 +10,7 @@
                 </div>
     			<p><?php echo substr($sobre['texto_sobre'],0,600);?></p>
     		</div>
-    	</div>
+    	</div><!--info-->
     	<div class="midia">
     		<div class="titulo-site">
     			<h2>Siga a gente em nossas redes sociais</h2>
@@ -29,7 +26,7 @@
 	    			<a href="http://<?php echo $sobre['social_3'];?>" target="_blank"><i class="<?php echo $sobre['icone3'];?>"></i> @noticias-inc</a>
 	    		</div>
     		</div>
-    	</div>
+    	</div><!--midia-->
     	<div id="contato" class="contato">
     		<div class="titulo-site">
     			<h2>Tire suas dúvidas</h2>
@@ -44,6 +41,6 @@
                 <input type="hidden" name="identificador" value="tirar_duvidas">
 	    		<input type="submit" name="enviar" value="Enviar">
 	    	</form>
-    	</div>
+    	</div><!--contato-->
     </div>
 </div><!--box-content-->
