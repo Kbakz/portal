@@ -249,10 +249,14 @@ section.conteudo{
 	padding: 30px 2%;
 }
 
+.publi {
+	width: 100%;
+    position: relative;
+}
+
 .publi-single{
-	padding: 20px;
-	height: 150px;
-	margin: 5px;
+	width: 100%;
+    padding-top: 15%;
 	background-color: #434343;
 }
 
@@ -515,6 +519,10 @@ section.conteudo{
 	cursor: pointer;
 }
 
+.contato input[type=submit]:hover {
+	background-color: #ea5241;
+}
+
 /*pagina classificados*/
 
 form.form-classificados{
@@ -614,6 +622,10 @@ form.form-classificados button{
 	text-decoration: none;
 }
 
+.classificado-texto a:hover {
+	background-color: #ea5241;
+}
+
 /*pagina apoiadores*/
 
 .apoiadores {
@@ -652,6 +664,10 @@ form.form-classificados button{
 	border-radius: 30px;
 	display: inline-block;
 	text-decoration: none;
+}
+
+.apoiador-texto a:hover {
+	background-color: #ea5241;
 }
 
 .apoiador-texto p {
@@ -729,6 +745,10 @@ form.form-classificados button{
 	margin-top: 10px;
 	font-size: 20px;
 	cursor: pointer;
+}
+
+.form-apoiador input[type=submit]:hover {
+	background-color: #ea5241;
 }
 
 /*post*/
