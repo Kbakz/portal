@@ -69,8 +69,22 @@
 
 <div class="box-content">
 	<div class="publi">
-		<div class="publi-single">
-
+		<div class="jd-slider publi-single">
+			<div class="slide-inner">
+			    <ul class="slide-area">
+			      <li>Slide 1</li>
+			      <li>Slide 2</li>
+			      <li>Slide 3</li>
+			      <li>Slide 4</li>
+			      <li>Slide 5</li>
+			      <li>Slide 6</li>
+			    </ul>
+			</div>
+			  <a class="prev" href="#"><i class="fas fa-angle-left fa-2x"></i></a>
+			  <a class="next" href="#"><i class="fas fa-angle-right fa-2x"></i></a>
+			<div class="controller">
+			  <div class="indicate-area"></div>
+			</div>
 		</div><!--publi-single-->
 	</div><!--publicidades-->
 
