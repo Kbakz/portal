@@ -72,17 +72,20 @@
 		<div class="jd-slider publi-single">
 			<div class="slide-inner">
 			    <ul class="slide-area">
-			      <li>Slide 1</li>
-			      <li>Slide 2</li>
-			      <li>Slide 3</li>
-			      <li>Slide 4</li>
-			      <li>Slide 5</li>
-			      <li>Slide 6</li>
+			      <li style="background-image: url(<?php echo INCLUDE_PATH_PAINEL?>uploads/606635e33901a.png);"><a href="#"></a></li>
+			      <li style="background-image: url(<?php echo INCLUDE_PATH_PAINEL?>uploads/6066357932028.png);"><a href="#"></a></li>
+			      <li style="background-image: url(<?php echo INCLUDE_PATH_PAINEL?>uploads/60663481472d0.png);"><a href="#"></a></li>
+			      <li style="background-image: url(<?php echo INCLUDE_PATH_PAINEL?>uploads/60663470ea668.jpg);"><a href="#"></a></li>
+			      <li style="background-image: url(<?php echo INCLUDE_PATH_PAINEL?>uploads/6066344ca8b17.jpg);"><a href="#"></a></li>
 			    </ul>
 			</div>
-			  <a class="prev" href="#"><i class="fas fa-angle-left fa-2x"></i></a>
-			  <a class="next" href="#"><i class="fas fa-angle-right fa-2x"></i></a>
+			<a class="prev" href="#"><i class="fas fa-angle-left fa-2x"></i></a>
+			<a class="next" href="#"><i class="fas fa-angle-right fa-2x"></i></a>
 			<div class="controller">
+			  <a class="auto" href="#">
+                <i class="fas fa-play fa-xs"></i>
+                <i class="fas fa-pause fa-xs"></i>
+              </a>
 			  <div class="indicate-area"></div>
 			</div>
 		</div><!--publi-single-->
