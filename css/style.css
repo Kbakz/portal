@@ -255,9 +255,27 @@ section.conteudo{
 }
 
 .publi-single{
-	width: 30%;
-    padding-top: 15%;
-	background-color: #434343;
+	width: 100%;
+	background-color: #ACACAC;
+}
+
+.publi-single li{
+	position: relative;
+	padding-top: 5%;
+	background-size: cover;
+	background-position: center;
+}
+
+.publi-single li a{
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.publi-single .next i, 
+.publi-single .prev i {
+	color: #012b62;
 }
 
 .noticia-destaque{
