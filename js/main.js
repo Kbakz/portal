@@ -1,6 +1,7 @@
 $(function(){
 	srollMenu();
 	ocultarSidebar();
+	passarSlide();
 	//enviarForm();
 
 	function srollMenu(){
@@ -78,6 +79,98 @@ $(function(){
 	$('select#ordem').change(function(){
 		$('form#form-ordem').submit();
 	});
+
+	function passarSlide(){
+		$('.publi-single').jdSlider({
+			  // enable/disable the carousel
+			  isUse: true,
+
+			  // wrapper element
+			  wrap: null,
+
+			  // default CSS selectors
+			  slide: '.slide-area',
+			  prev: '.prev',
+			  next: '.next',
+			  indicate: '.indicate-area',
+			  auto: '.auto', 
+			  playClass: 'play',
+			  pauseClass: 'pause',
+			  noSliderClass: 'slider--none', 
+			  willFocusClass: 'will-focus', 
+			  unusedClass: 'hidden', 
+
+			  // how many slides to display at a time
+			  slideShow: 3,
+
+			  // how many slides to scroll at a time
+			  // slideTo <a href="https://www.jqueryscript.net/tags.php?/Scroll/">Scroll</a>: 3,
+
+			  // start slide
+			  slideStart: 1,
+
+			  // margin property
+			  margin: null, 
+
+			  // animation speed
+			  speed: 500, 
+
+			  // easing
+			  timingFunction: 'ease',
+			  easing: 'swing',
+
+			  // autoplay interval
+			  interval: 4000, 
+
+			  // touch throttle
+			  touchDistance: 20, 
+
+			  // resistance ratio
+			  resistanceRatio: .5,
+
+			  // is overflow
+			  isOverflow: false,
+
+			  // shows indicator
+			  isIndicate: true,
+
+			  // is autoplay
+			  isAuto: true,
+
+			  // is infinite loop
+			  isLoop: true,
+
+			  // false: use fade animation instead
+			  isSliding: true,
+
+			  // pause on hover
+			  isCursor: true,
+
+			  // enable touch event
+			  isTouch: true,
+
+			  // enable drag event
+			  isDrag: true,
+
+			  // enable swipe resistance
+			  isResistance: true,
+
+			  // auto playback
+			  isCustomAuto: true, 
+
+			  // auto playback
+			  autoState: 'auto',
+
+			  // custom indicator
+			  indicateList: function (i) {
+			      return '<a href="#">' + i + '</a>'; 
+			  },
+
+			  // progress function
+			  progress: function () {}
+
+		});
+	}
 
 	/*
 	function enviarForm(){

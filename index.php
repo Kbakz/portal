@@ -25,6 +25,7 @@
 
 	<link rel="preload" as="style" href="<?php echo INCLUDE_PATH?>css/style.css">
 	<!--<link rel="preload" as="image" href="">-->
+	<link rel="stylesheet" href="<?php echo INCLUDE_PATH?>css/jquery.jdSlider.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH?>css/style.css">
@@ -102,6 +103,7 @@
 	</footer>
 
 	<script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
+	<script src="<?php echo INCLUDE_PATH?>js/jquery.jdSlider-latest.min.js"></script>
 	<script src="<?php echo INCLUDE_PATH?>js/constants.js"></script>
 	<script src="<?php echo INCLUDE_PATH?>js/formulario.js"></script>
 	<script src="https://kit.fontawesome.com/169263c84a.js" crossorigin="anonymous" defer></script>
