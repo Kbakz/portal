@@ -167,11 +167,12 @@ $(function(){
 			  },
 
 			  // progress function
-			  progress: function () {}
+			  progress: function () {},
+
+			  onAuto: function () {}
 
 		});
 	}
-
 	/*
 	function enviarForm(){
         $('form.ajax').ajaxForm({
