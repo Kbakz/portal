@@ -21,7 +21,7 @@
 				$imagem_atual = $_POST['imagem_atual'];
 				$imagem = $_FILES['imagem'];
 
-				if(strlen($descricao) > 600){
+				if(strlen($descricao) > 6000){
 					Painel::alert('erro','Você atingiu o limite de caracteres');
 				}else if($imagem['name'] != ''){
 					if(Painel::imagemValida($imagem)){
